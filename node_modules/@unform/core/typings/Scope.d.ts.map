@@ -1,0 +1,1 @@
+{"version":3,"file":"Scope.d.ts","sourceRoot":"","sources":["../lib/Scope.tsx"],"names":[],"mappings":"AAAA,OAAO,EAAc,SAAS,EAAE,MAAM,OAAO,CAAA;AAI7C,MAAM,WAAW,UAAU;IACzB,IAAI,EAAE,MAAM,CAAA;IACZ,QAAQ,EAAE,SAAS,CAAA;CACpB;AAED,wBAAgB,KAAK,CAAC,EAAE,IAAI,EAAE,QAAQ,EAAE,EAAE,UAAU,eAanD"}
