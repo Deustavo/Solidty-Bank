@@ -14,7 +14,7 @@ import { change_screen, set_transaction_data } from '../../../store/dashboard/ac
 import getValidationErrors from '../../../utils/getValidationErrors';
 import Loader from '../../Loader';
 
-const Deposit: React.FC = () => {
+const PagarFatura: React.FC = () => {
 
   const dispatch = useDispatch();
 
@@ -85,7 +85,7 @@ const Deposit: React.FC = () => {
       if (status !== 200) throw new Error('Something went wrong with request');
 
       dispatch(set_transaction_data(undefined));
-      dispatch(change_screen('Transações'));
+      dispatch(change_screen('VisaoGeral'));
 
       toast.success(invoicePayment ? 'Pagamento realizado' : 'Depósito realizado');
       clearForm();
@@ -144,4 +144,4 @@ const Deposit: React.FC = () => {
   )
 }
 
-export default Deposit;
+export default PagarFatura;

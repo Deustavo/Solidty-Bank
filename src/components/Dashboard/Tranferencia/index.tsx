@@ -15,11 +15,11 @@ import { FormHandles } from '@unform/core';
 import getValidationErrors from '../../../utils/getValidationErrors';
 import Loader from '../../Loader';
 
-interface PaymentsProps {
+interface TranferenciaProps {
   func: Function;
 }
 
-const Payments: React.FC<PaymentsProps> = (props) => {
+const Tranferencia: React.FC<TranferenciaProps> = (props) => {
 
   const dispatch = useDispatch();
 
@@ -108,7 +108,7 @@ const Payments: React.FC<PaymentsProps> = (props) => {
       if (status !== 200) throw new Error('Something went wrong with request');
 
       dispatch(set_transaction_data(undefined))
-      dispatch(change_screen('Transações'));
+      dispatch(change_screen('VisaoGeral'));
 
       toast.success('Transferência realizada com sucesso.');
       clearForm();
@@ -168,4 +168,4 @@ const Payments: React.FC<PaymentsProps> = (props) => {
 
 }
 
-export default Payments;
+export default Tranferencia;
