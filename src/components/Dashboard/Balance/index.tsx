@@ -79,7 +79,7 @@ const Balance: React.FC<AccountProps> = (props) => {
           <p>Saldo disponivel</p>
           <h3 className={`value acccount ${hide ? 'hide' : ''}`} title={contaBanco?.saldo.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}>{contaBanco?.saldo.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h3>
           <div>
-            <p>Transações</p>
+            <p>VisaoGeral</p>
             <h3 className={hide ? 'hide' : ''} title={totalTransactions.banco.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}>{totalTransactions.banco.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h3>
           </div>
 

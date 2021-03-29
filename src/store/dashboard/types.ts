@@ -6,7 +6,7 @@ export enum DashboardActions {
     INSERT_PLANS_DATA = 'INSERT_PLANS_DATA'
 }
 
-export type Screen = 'Depósitos' | 'Pagamentos' | 'Planos' | 'Transações';
+export type Screen = 'VisaoGeral' | 'ContaCorrente' | 'AdicionarFundos' | 'CartaoCredito'  | 'PagarFatura'| 'Tranferencia' | 'Plans' ;
 
 export interface Transactions {
     accounts: Contas;

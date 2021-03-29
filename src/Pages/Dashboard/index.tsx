@@ -1,19 +1,25 @@
 import React, { useCallback, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { FiLogOut, FiAlignRight } from 'react-icons/fi';
+
 import gamaIcon from '../../assets/svgs/gama-icon.svg';
 import CardMenu from '../../components/Dashboard/CardMenu';
 import CardMenuMobile from '../../components/Dashboard/CardMenuMobile';
-import Deposit from '../../components/Dashboard/Deposit';
-import Payments from '../../components/Dashboard/Payments';
-import Plans from '../../components/Dashboard/Plans';
-import Transactions from '../../components/Dashboard/Transactions';
-import { useDispatch, useSelector } from 'react-redux';
 import { remove_user } from '../../store/user/actions';
 import { ApplicationStore } from '../../store';
 import { change_screen } from '../../store/dashboard/actions';
 import { Screen } from '../../store/dashboard/types';
 import ExitModal from '../../components/Dashboard/ExitModal';
+
+// paginas
+import VisaoGeral from '../../components/Dashboard/VisaoGeral';
+import ContaCorrente from '../../components/Dashboard/ContaCorrente';
+import AdicionarFundos from '../../components/Dashboard/AdicionarFundos';
+import CartaoCredito from '../../components/Dashboard/CartaoCredito';
+import PagarFatura from '../../components/Dashboard/PagarFatura';
+import Tranferencia from '../../components/Dashboard/Tranferencia';
+import Plans from '../../components/Dashboard/Plans';
 
 const Dashboard: React.FC = () => {
   const history = useHistory();
@@ -21,12 +27,12 @@ const Dashboard: React.FC = () => {
 
   const currentScreen = useSelector((store: ApplicationStore) => store.dashboard.current_screen);
 
-  const [modalIsOpen,setIsOpen] = useState(false);
+  const [ modalIsOpen, setModalIsOpen ] = useState(false);
   const [ isExiting, setIsExiting ] = useState(false);
 
   //Setting data accounts;
   const changeComponent = useCallback((title: Screen) => {
-    setIsOpen(false);
+    setModalIsOpen(false);
     dispatch( change_screen(title) );
   }, [dispatch]);
 
@@ -42,9 +48,9 @@ const Dashboard: React.FC = () => {
 
   function setModal() { 
     if(modalIsOpen === true)
-      setIsOpen(false);
+      setModalIsOpen(false);
     else
-      setIsOpen(true);
+      setModalIsOpen(true);
   }
 
   return (
@@ -54,13 +60,13 @@ const Dashboard: React.FC = () => {
         {modalIsOpen && (
           <div onClick={setModal}>
 
-            <CardMenuMobile title = 'Depósitos' func={changeComponent} />
-            <CardMenuMobile title = 'Planos' func={changeComponent} />
-            <CardMenuMobile title = 'Pagamentos' func={changeComponent}  />
-            <CardMenuMobile title = 'Transações' func={changeComponent} />
+            <CardMenuMobile title = 'AdicionarFundos' func={changeComponent} />
+            <CardMenuMobile title = 'Plans' func={changeComponent} />
+            <CardMenuMobile title = 'Tranferencia' func={changeComponent}  />
+            <CardMenuMobile title = 'VisaoGeral' func={changeComponent} />
             <div onClick={ () => {
               setIsExiting(true);
-              setIsOpen(false);
+              setModalIsOpen(false);
             }}>
               <FiLogOut size={16} color="#fff" style={{ marginRight: 8 }} />
               Sair
@@ -72,15 +78,34 @@ const Dashboard: React.FC = () => {
         <div>
         <FiAlignRight color="#fff" size={ 60 } onClick={() => setModal()} ></FiAlignRight>
         </div>
-
       </div> 
       <div>
         <nav>
           <img className="logo" src={gamaIcon} alt="Gama icon" />
-          <CardMenu title='Depósitos' onClick={() => changeComponent('Depósitos')} selected={currentScreen === 'Depósitos'} />
-          <CardMenu title='Planos' onClick={() => changeComponent('Planos')} selected={currentScreen === 'Planos'} />
-          <CardMenu title='Pagamentos' onClick={() => changeComponent('Pagamentos')} selected={currentScreen === 'Pagamentos'} />
-          <CardMenu title='Transações' onClick={() => changeComponent('Transações')} selected={currentScreen === 'Transações'} />
+          {/* visão geral */}
+          <CardMenu title='VisaoGeral' onClick={() => changeComponent('VisaoGeral')} selected={currentScreen === 'VisaoGeral'} />
+
+          {/* conta corrente (apenas a parte do 'conta' que tem dentro do componente VisaoGeral)*/}
+          {/* <CardMenu title='VisaoGeral' onClick={() => changeComponent('VisaoGeral')} selected={currentScreen === 'VisaoGeral'} /> */}
+          <CardMenu title='ContaCorrente' onClick={() => changeComponent('ContaCorrente')} selected={currentScreen === 'ContaCorrente'} />
+
+          {/* Adicionar fundos (apenas a parte do 'realize seu deposito' dentro com componente "depositos")*/}
+          <CardMenu title='AdicionarFundos' onClick={() => changeComponent('AdicionarFundos')} selected={currentScreen === 'AdicionarFundos'} />
+
+          {/* catão de credito (apenas a parte do 'cartão de credito' que tem dentro do componente VisaoGeral)*/}
+          {/* <CardMenu title='VisaoGeral' onClick={() => changeComponent('VisaoGeral')} selected={currentScreen === 'VisaoGeral'} /> */}
+          <CardMenu title='CartaoCredito' onClick={() => changeComponent('CartaoCredito')} selected={currentScreen === 'CartaoCredito'} />
+          
+          {/* Pagar fatura (apenas a parte do 'pagamento de fatura' dentro com componente "depositos") */}
+          {/* <CardMenu title='AdicionarFundos' onClick={() => changeComponent('AdicionarFundos')} selected={currentScreen === 'AdicionarFundos'} /> */}
+          <CardMenu title='PagarFatura' onClick={() => changeComponent('PagarFatura')} selected={currentScreen === 'PagarFatura'} />
+
+          {/* tranferencia */}
+          <CardMenu title='Tranferencia' onClick={() => changeComponent('Tranferencia')} selected={currentScreen === 'Tranferencia'} />
+
+            
+          {/* movimentações */}
+           <CardMenu title='Plans' onClick={() => changeComponent('Plans')} selected={currentScreen === 'Plans'} />
 
           <button onClick={ () => setIsExiting(true) } >
             <FiLogOut color="#fff" size={ 20 } />
@@ -89,10 +114,26 @@ const Dashboard: React.FC = () => {
         </nav>
         <main>
           {/* Render component by currentScreen */}
-          {currentScreen === 'Depósitos' && <Deposit />}
-          {currentScreen === 'Pagamentos' && <Payments func={changeComponent}></Payments>}
-          {currentScreen === 'Planos' && <Plans />}
-          {currentScreen === 'Transações' && <Transactions></Transactions>}
+          {/* visão geral */}
+          {currentScreen === 'VisaoGeral' && <VisaoGeral />}
+          
+          {/* conta corrente */}
+          {currentScreen === 'ContaCorrente' && <ContaCorrente />}
+
+          {/* Adicionar fundos */}
+          {currentScreen === 'AdicionarFundos' && <AdicionarFundos />}
+
+          {/* cartão de credito */}
+          {currentScreen === 'CartaoCredito' && <CartaoCredito />}
+
+          {/* pagar fatura */}
+          {currentScreen === 'PagarFatura' && <PagarFatura />}
+
+          {/* tranferencia */}
+          {currentScreen === 'Tranferencia' && <Tranferencia func={changeComponent}></Tranferencia>}
+
+           {/* Plans*/}
+          {currentScreen === 'Plans' && <Plans />}
         </main>
       </div>
     </>

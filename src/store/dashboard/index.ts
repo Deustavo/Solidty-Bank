@@ -3,7 +3,7 @@ import { Plano } from "../../types/dash-board";
 import { DashboardActions, DashboardData, Screen, Transactions } from "./types";
 
 const INITIAL_STATE: DashboardData = {
-    current_screen: 'Transações'
+    current_screen: 'VisaoGeral'
 }
 
 const reducer: Reducer<DashboardData> = (state = INITIAL_STATE, action) => {

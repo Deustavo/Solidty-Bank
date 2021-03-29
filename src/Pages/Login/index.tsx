@@ -30,7 +30,7 @@ const Login: React.FC = () => {
     Object.keys(data).forEach(key => {
       filteredData[key] = data[key].trim();
     });
-ç
+
     setLoading(true);
     try {
       formRef.current?.setErrors({});
@@ -52,6 +52,7 @@ const Login: React.FC = () => {
       localStorage.setItem('@user_name', response.usuario.nome);
       updateReduxState();
       toast.success('Seja bem-vindo(a)');
+      
       //redirecionar para dashboard;
     }
     catch (err) {
