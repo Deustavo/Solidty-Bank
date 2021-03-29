@@ -55,31 +55,33 @@ const Dashboard: React.FC = () => {
 
   return (
     <>
-        { isExiting && <ExitModal setResponse={ handleLogOut } /> }
+      { isExiting && <ExitModal setResponse={ handleLogOut } /> }
 
-        {modalIsOpen && (
-          <div onClick={setModal}>
+      {modalIsOpen && (
+        <div onClick={setModal}>
 
-            <CardMenuMobile title = 'AdicionarFundos' func={changeComponent} />
-            <CardMenuMobile title = 'Plans' func={changeComponent} />
-            <CardMenuMobile title = 'Tranferencia' func={changeComponent}  />
-            <CardMenuMobile title = 'VisaoGeral' func={changeComponent} />
-            <div onClick={ () => {
-              setIsExiting(true);
-              setModalIsOpen(false);
-            }}>
-              <FiLogOut size={16} color="#fff" style={{ marginRight: 8 }} />
-              Sair
-            </div>
+          <CardMenuMobile title = 'AdicionarFundos' func={changeComponent} />
+          <CardMenuMobile title = 'Plans' func={changeComponent} />
+          <CardMenuMobile title = 'Tranferencia' func={changeComponent}  />
+          <CardMenuMobile title = 'VisaoGeral' func={changeComponent} />
+          <div onClick={ () => {
+            setIsExiting(true);
+            setModalIsOpen(false);
+          }}>
+            <FiLogOut size={16} color="#fff" style={{ marginRight: 8 }} />
+            Sair
           </div>
-        )}
-      <div>
+        </div>
+      )}
+
+      <div className="show-mobile">
         <img className="logo" src={gamaIcon} alt="Gama icon"/>
         <div>
-        <FiAlignRight color="#fff" size={ 60 } onClick={() => setModal()} ></FiAlignRight>
+        <FiAlignRight color="#000" size={ 60 } onClick={() => setModal()} ></FiAlignRight>
         </div>
       </div> 
-      <div>
+    
+      <div className="hidden-mobile">
         <nav>
           <img className="logo" src={gamaIcon} alt="Gama icon" />
           {/* visão geral */}
@@ -112,7 +114,7 @@ const Dashboard: React.FC = () => {
           </button>
 
         </nav>
-        <main>
+        <main style={{ width: '80%', margin: 'auto'}}>
           {/* Render component by currentScreen */}
           {/* visão geral */}
           {currentScreen === 'VisaoGeral' && <VisaoGeral />}
