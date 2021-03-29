@@ -52,6 +52,7 @@ const Login: React.FC = () => {
       localStorage.setItem('@user_name', response.usuario.nome);
       updateReduxState();
       toast.success('Seja bem-vindo(a)');
+      
       //redirecionar para dashboard;
     }
     catch (err) {
