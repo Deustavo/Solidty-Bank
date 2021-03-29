@@ -30,7 +30,7 @@ const Login: React.FC = () => {
     Object.keys(data).forEach(key => {
       filteredData[key] = data[key].trim();
     });
-ç
+
     setLoading(true);
     try {
       formRef.current?.setErrors({});

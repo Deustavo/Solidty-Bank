@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, RouteProps, Redirect } from 'react-router-dom';
-import Dashboard from './Pages/Dashboard';
 
+import Dashboard from './Pages/Dashboard';
 import Landing from './Pages/Landing';
 import Login from './Pages/Login';
 import RecoverPassword from './Pages/RecoverPassword';
@@ -27,8 +27,9 @@ const Routes: React.FC = () => {
     return (
         <BrowserRouter>
             <Switch>
-                {/* Rotas */}
+                {/* Home */}
                 <Route path="/" exact component={Landing} />
+                {/* login */}
                 <UnauthRoute path="/login" component={Login} />
             </Switch>
         </BrowserRouter>
