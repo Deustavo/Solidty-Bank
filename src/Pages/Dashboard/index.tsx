@@ -19,7 +19,7 @@ import AdicionarFundos from '../../components/Dashboard/AdicionarFundos';
 import CartaoCredito from '../../components/Dashboard/CartaoCredito';
 import PagarFatura from '../../components/Dashboard/PagarFatura';
 import Tranferencia from '../../components/Dashboard/Tranferencia';
-import Movimentacoes from '../../components/Dashboard/Movimentacoes';
+import Plans from '../../components/Dashboard/Plans';
 
 const Dashboard: React.FC = () => {
   const history = useHistory();
@@ -61,7 +61,7 @@ const Dashboard: React.FC = () => {
           <div onClick={setModal}>
 
             <CardMenuMobile title = 'AdicionarFundos' func={changeComponent} />
-            <CardMenuMobile title = 'Movimentacoes' func={changeComponent} />
+            <CardMenuMobile title = 'Plans' func={changeComponent} />
             <CardMenuMobile title = 'Tranferencia' func={changeComponent}  />
             <CardMenuMobile title = 'VisaoGeral' func={changeComponent} />
             <div onClick={ () => {
@@ -103,8 +103,9 @@ const Dashboard: React.FC = () => {
           {/* tranferencia */}
           <CardMenu title='Tranferencia' onClick={() => changeComponent('Tranferencia')} selected={currentScreen === 'Tranferencia'} />
 
+            
           {/* movimentações */}
-          <CardMenu title='Movimentacoes' onClick={() => changeComponent('Movimentacoes')} selected={currentScreen === 'Movimentacoes'} />
+           <CardMenu title='Plans' onClick={() => changeComponent('Plans')} selected={currentScreen === 'Plans'} />
 
           <button onClick={ () => setIsExiting(true) } >
             <FiLogOut color="#fff" size={ 20 } />
@@ -131,8 +132,8 @@ const Dashboard: React.FC = () => {
           {/* tranferencia */}
           {currentScreen === 'Tranferencia' && <Tranferencia func={changeComponent}></Tranferencia>}
 
-          {/* movimentacao*/}
-          {currentScreen === 'Movimentacoes' && <Movimentacoes />}
+           {/* movimentacao*/}
+          {currentScreen === 'Plans' && <Plans />}
         </main>
       </div>
     </>
