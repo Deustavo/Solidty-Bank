@@ -132,7 +132,7 @@ const Dashboard: React.FC = () => {
           {/* tranferencia */}
           {currentScreen === 'Tranferencia' && <Tranferencia func={changeComponent}></Tranferencia>}
 
-           {/* movimentacao*/}
+           {/* Plans*/}
           {currentScreen === 'Plans' && <Plans />}
         </main>
       </div>
