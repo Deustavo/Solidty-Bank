@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.hidden-mobile { display: flex }
+.show-mobile { display: none }
+
+@media only screen and (max-width: 1024px) {
+    .hidden-mobile { display: none }
+    .show-mobile { display: flex }
+}
