@@ -83,14 +83,14 @@ const Transactions: React.FC = () => {
     <div>
       {/* Componente para página principal */}      
 
-      <Balance contaBanco={contas?.contaBanco} contaCredito={contas?.contaCredito}/>
+      <Balance contaBanco={contas?.contaBanco} title="Conta corrente"/>
 
       <div>
         <p>Escolhe a quantidade de <strong>meses</strong> para o filtro: </p>
         <input  type="number" min={1} max={12} value={referenceDate} onChange={updateReference}/>
       </div>
 
-      <Extract contaBanco={contas?.contaBanco} contaCredito={contas?.contaCredito}/>
+      <Extract contaCredito={contas?.contaCredito}/>
       {/* <FiArrowLeft onClick={() => {props.func('')}}/> */}
 
     </div>

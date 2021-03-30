@@ -5,6 +5,7 @@ import { Conta } from '../../../types/dash-board';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
 import { ApplicationStore } from '../../../store';
 import { useSelector } from 'react-redux';
+import '../Dashboard.css';
 
 
 interface Total {
@@ -15,6 +16,7 @@ interface Total {
 interface AccountProps {
   contaBanco?: Conta,
   contaCredito?: Conta,
+  title?: string
 }
 
 const Balance: React.FC<AccountProps> = (props) => {
@@ -63,39 +65,33 @@ const Balance: React.FC<AccountProps> = (props) => {
   return (
     <>
       <div>
-        <div>
-          <p>Olá <strong>{user.split(' ')[0]}</strong>, seja bem-vindo(a)!</p>
-          <div>
+        <div className="title-dashboard" style={{ display: 'flex', justifyContent: 'space-between'}}>
+          <p>{props.title}</p>
+          <div style={{color: 'var(--secunday-color)'}}>
             {!hide ? <FiEye size={35} onClick={() => hideOrShowInformations()} /> : <FiEyeOff size={35} onClick={() => hideOrShowInformations()} />}
           </div>
         </div>
       </div>
-      <div>
-        <div>
-          <div className='title'>
-            <img src={currentIcon} alt="current icon" />
-            <p>Conta</p>
+      <div className="containers-cards">
+        <div className="main-card card-dashboard"  style={{ display: props.contaBanco ? 'flex' : 'none'}}>
+          <img src={currentIcon} style={{ width: 28 }} alt="current icon" />
+          <div style={{ marginLeft: 24, display: 'flex', flexDirection: 'column'}}>
+            <p style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 12 }}>Conta</p>
+            <p style={{ color: '#808080'}}>Saldo disponivel</p>
+            <h3 className={`value acccount ${hide ? 'hide' : ''}`} title={contaBanco?.saldo.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })} style={{ color: 'var(--primary-color)', fontSize: 48}}>{contaBanco?.saldo.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h3>
           </div>
-          <p>Saldo disponivel</p>
-          <h3 className={`value acccount ${hide ? 'hide' : ''}`} title={contaBanco?.saldo.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}>{contaBanco?.saldo.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h3>
-          <div>
-            <p>VisaoGeral</p>
-            <h3 className={hide ? 'hide' : ''} title={totalTransactions.banco.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}>{totalTransactions.banco.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h3>
-          </div>
-
         </div>
-        <div>
-          {/*  */}
-          <div className='title'>
-            <img src={creditIcon} alt="current icon" />
-            <p>Conta Crédito</p>
-          </div>
-          <p>Fatura atual</p>
-          <h3 className={`value credit ${hide ? 'hide' : ''}`} title={contaCredito?.saldo.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}>{contaCredito?.saldo.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h3>
-          <div>
-            <p>Limite Disponivel</p>
-            <h3 className={hide ? 'hide' : ''} title={totalTransactions.credito.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
-            }>{totalTransactions.credito.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h3>
+
+        <div className="main-card card-dashboard" style={{ display: props.contaCredito ? 'flex' : 'none'}}>
+          <img src={creditIcon} style={{ width: 28, marginTop: 4 }} alt="current icon" />
+          <div style={{ marginLeft: 24, display: 'flex', flexDirection: 'column'}}>
+            <p style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 12  }}>Cartão de Crédito</p>
+            <p style={{ color: '#808080'}}>Fatura em aberto</p>
+            <h3 className={`value credit ${hide ? 'hide' : ''}`} title={contaCredito?.saldo.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })} style={{ color: '#ff4949' }}>{contaCredito?.saldo.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h3>
+            <div style={{ marginTop: 12 }}>
+              <p style={{ color: '#808080'}}>Limite disponivel</p>
+              <h3 className={hide ? 'hide' : ''} title={totalTransactions.credito.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })} style={{ color: '#13ce66' }}>{totalTransactions.credito.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h3>
+            </div>
           </div>
         </div>
       </div>

@@ -1,0 +1,29 @@
+.title-dashboard {
+    font-size: 28px;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin: 40px 0;
+}
+
+
+/* Estilização dos cards */
+.containers-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 64px ;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.card-dashboard {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 24vw;
+}
+
+@media only screen and (max-width: 1024px) {   
+    .containers-cards {
+        flex-direction: column;
+    }
+}

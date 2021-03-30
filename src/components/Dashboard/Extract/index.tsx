@@ -44,13 +44,14 @@ const Extract: React.FC<ExtractData> = (props) => {
 
     return (
         <>
-            <div>
+            <div className="main-card">
                 <div className="title-container">
                     <img src={currentIcon} alt="current icon" />
                     <p>Últimos lançamentos</p>
                 </div>
-                {allLaunchs.length === 0 && 'Nenhum lancamento'}
-                {allLaunchs && allLaunchs.map((launch, index) => {
+                <div >
+                    {allLaunchs.length === 0 && 'Nenhum lancamento'}
+                    {allLaunchs && allLaunchs.map((launch, index) => {
                     return (
                         <div key={index}>
                             <img src={creditCardsIcon} alt="credit cards icon" />
@@ -63,6 +64,7 @@ const Extract: React.FC<ExtractData> = (props) => {
                         </div>
                     )
                 })}
+                </div>
             </div>
         </>
     )
