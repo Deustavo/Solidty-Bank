@@ -86,7 +86,7 @@ const Transactions: React.FC = () => {
       <Balance contaCredito={contas?.contaCredito} title="Cartão de crédito"/>
 
       <div style={{ padding: '40px 0'}}>
-        <p style={{ fontWeight: 'bold', fontSize: 24 }}>Últimas movimentações </p>
+        <p style={{ fontWeight: 'bold', fontSize: 24, color: 'var(--primary-color)' }}>Últimas movimentações </p>
         <p>Filtrar por mês: <input  type="number" min={1} max={12} value={referenceDate} onChange={updateReference}/></p>
       </div>
 

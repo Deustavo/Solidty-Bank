@@ -76,16 +76,28 @@ const Balance: React.FC<AccountProps> = (props) => {
       <div className="containers-cards">
         <div className="main-card card-dashboard"  style={{ display: props.contaBanco ? 'flex' : 'none'}}>
           <img src={currentIcon} style={{ width: 28 }} alt="current icon" />
-          <div style={{ marginLeft: 24, display: 'flex', flexDirection: 'column'}}>
+          <div style={{ marginLeft: 24, display: 'flex', flexDirection: 'column', width: '100%'}}>
             <p style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 12 }}>Conta</p>
             <p style={{ color: '#808080'}}>Saldo disponivel</p>
             <h3 className={`value acccount ${hide ? 'hide' : ''}`} title={contaBanco?.saldo.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })} style={{ color: 'var(--primary-color)', fontSize: 48}}>{contaBanco?.saldo.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h3>
           </div>
+        </div>        
+
+        <div className="main-card credit-card" style={{ display: props.title === "Cartão de crédito" ? "block" : "none" }}>
+          <div className="credit-card-logo">
+            <img src="./card/masterCardLogo.png" style={{width: 70}}/>
+            <h1>Solidty</h1>
+          </div>
+          <div className="credit-card-chip">
+            <img src="./card/chip.png"/>
+            <img src="./card/nfc.png"/>
+          </div>
+          <p style={{fontSize: 20}}>{user}</p>
         </div>
 
-        <div className="main-card card-dashboard credit-card" style={{ display: props.contaCredito ? 'flex' : 'none'}}>
+        <div className="main-card card-dashboard card-margin" style={{ display: props.contaCredito ? 'flex' : 'none'}}>
           <img src={creditIcon} style={{ width: 28, marginTop: 4 }} alt="current icon" />
-          <div style={{ marginLeft: 24, display: 'flex', flexDirection: 'column'}}>
+          <div style={{ marginLeft: 24, display: 'flex', flexDirection: 'column', width: '100%'}}>
             <p style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 12  }}>Cartão de Crédito</p>
             <p style={{ color: '#808080'}}>Fatura em aberto</p>
             <h3 className={`value credit ${hide ? 'hide' : ''}`} title={contaCredito?.saldo.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })} style={{ color: '#ff4949' }}>{contaCredito?.saldo.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h3>
@@ -95,6 +107,7 @@ const Balance: React.FC<AccountProps> = (props) => {
             </div>
           </div>
         </div>
+        
       </div>
     </>
 
