@@ -11,6 +11,7 @@ import { ApplicationStore } from '../../store';
 import { change_screen } from '../../store/dashboard/actions';
 import { Screen } from '../../store/dashboard/types';
 import ExitModal from '../../components/Dashboard/ExitModal';
+import './index.css';
 
 // paginas
 import VisaoGeral from '../../components/Dashboard/VisaoGeral';
@@ -74,47 +75,48 @@ const Dashboard: React.FC = () => {
         </div>
       )}
 
-      <div className="show-mobile">
-        <img className="logo" src={gamaIcon} alt="Gama icon"/>
-        <div>
-        <FiAlignRight color="#000" size={ 60 } onClick={() => setModal()} ></FiAlignRight>
-        </div>
-      </div> 
-    
-      <div className="hidden-mobile">
-        <nav>
-          <img className="logo" src={gamaIcon} alt="Gama icon" />
-          {/* visão geral */}
-          <CardMenu title='VisaoGeral' onClick={() => changeComponent('VisaoGeral')} selected={currentScreen === 'VisaoGeral'} />
+      <div className="container-dashboard">
+        <div className="show-mobile">
+          <img className="logo" src={gamaIcon} alt="Gama icon"/>
+          <div>
+          <FiAlignRight color="#000" size={ 60 } onClick={() => setModal()} ></FiAlignRight>
+          </div>
+        </div> 
+      
+        <div className="hidden-mobile">
+          <nav>
+            <img className="logo" src={gamaIcon} alt="Gama icon" />
+            {/* visão geral */}
+            <CardMenu title='VisaoGeral' onClick={() => changeComponent('VisaoGeral')} selected={currentScreen === 'VisaoGeral'} />
 
-          {/* conta corrente (apenas a parte do 'conta' que tem dentro do componente VisaoGeral)*/}
-          {/* <CardMenu title='VisaoGeral' onClick={() => changeComponent('VisaoGeral')} selected={currentScreen === 'VisaoGeral'} /> */}
-          <CardMenu title='ContaCorrente' onClick={() => changeComponent('ContaCorrente')} selected={currentScreen === 'ContaCorrente'} />
+            {/* conta corrente (apenas a parte do 'conta' que tem dentro do componente VisaoGeral)*/}
+            {/* <CardMenu title='VisaoGeral' onClick={() => changeComponent('VisaoGeral')} selected={currentScreen === 'VisaoGeral'} /> */}
+            <CardMenu title='ContaCorrente' onClick={() => changeComponent('ContaCorrente')} selected={currentScreen === 'ContaCorrente'} />
 
-          {/* Adicionar fundos (apenas a parte do 'realize seu deposito' dentro com componente "depositos")*/}
-          <CardMenu title='AdicionarFundos' onClick={() => changeComponent('AdicionarFundos')} selected={currentScreen === 'AdicionarFundos'} />
+            {/* Adicionar fundos (apenas a parte do 'realize seu deposito' dentro com componente "depositos")*/}
+            <CardMenu title='AdicionarFundos' onClick={() => changeComponent('AdicionarFundos')} selected={currentScreen === 'AdicionarFundos'} />
 
-          {/* catão de credito (apenas a parte do 'cartão de credito' que tem dentro do componente VisaoGeral)*/}
-          {/* <CardMenu title='VisaoGeral' onClick={() => changeComponent('VisaoGeral')} selected={currentScreen === 'VisaoGeral'} /> */}
-          <CardMenu title='CartaoCredito' onClick={() => changeComponent('CartaoCredito')} selected={currentScreen === 'CartaoCredito'} />
-          
-          {/* Pagar fatura (apenas a parte do 'pagamento de fatura' dentro com componente "depositos") */}
-          {/* <CardMenu title='AdicionarFundos' onClick={() => changeComponent('AdicionarFundos')} selected={currentScreen === 'AdicionarFundos'} /> */}
-          <CardMenu title='PagarFatura' onClick={() => changeComponent('PagarFatura')} selected={currentScreen === 'PagarFatura'} />
-
-          {/* tranferencia */}
-          <CardMenu title='Tranferencia' onClick={() => changeComponent('Tranferencia')} selected={currentScreen === 'Tranferencia'} />
-
+            {/* catão de credito (apenas a parte do 'cartão de credito' que tem dentro do componente VisaoGeral)*/}
+            {/* <CardMenu title='VisaoGeral' onClick={() => changeComponent('VisaoGeral')} selected={currentScreen === 'VisaoGeral'} /> */}
+            <CardMenu title='CartaoCredito' onClick={() => changeComponent('CartaoCredito')} selected={currentScreen === 'CartaoCredito'} />
             
-          {/* movimentações */}
-           <CardMenu title='Plans' onClick={() => changeComponent('Plans')} selected={currentScreen === 'Plans'} />
+            {/* Pagar fatura (apenas a parte do 'pagamento de fatura' dentro com componente "depositos") */}
+            {/* <CardMenu title='AdicionarFundos' onClick={() => changeComponent('AdicionarFundos')} selected={currentScreen === 'AdicionarFundos'} /> */}
+            <CardMenu title='PagarFatura' onClick={() => changeComponent('PagarFatura')} selected={currentScreen === 'PagarFatura'} />
 
-          <button onClick={ () => setIsExiting(true) } >
-            <FiLogOut color="#fff" size={ 20 } />
-          </button>
+            {/* tranferencia */}
+            <CardMenu title='Tranferencia' onClick={() => changeComponent('Tranferencia')} selected={currentScreen === 'Tranferencia'} />
 
-        </nav>
-        <main style={{ width: '60%', margin: '0 auto 0 80px'}}>
+            {/* movimentações */}
+            <CardMenu title='Plans' onClick={() => changeComponent('Plans')} selected={currentScreen === 'Plans'} />
+
+            <button onClick={ () => setIsExiting(true) } >
+              <FiLogOut color="#fff" size={ 20 } />
+            </button>
+          </nav>
+        </div>
+
+        <main className="main-dashboard">
           {/* Render component by currentScreen */}
           {/* visão geral */}
           {currentScreen === 'VisaoGeral' && <VisaoGeral />}
@@ -134,7 +136,7 @@ const Dashboard: React.FC = () => {
           {/* tranferencia */}
           {currentScreen === 'Tranferencia' && <Tranferencia func={changeComponent}></Tranferencia>}
 
-           {/* Plans*/}
+            {/* Plans*/}
           {currentScreen === 'Plans' && <Plans />}
         </main>
       </div>

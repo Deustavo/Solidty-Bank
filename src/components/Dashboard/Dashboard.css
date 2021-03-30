@@ -5,7 +5,6 @@
     margin: 40px 0;
 }
 
-
 /* Estilização dos cards */
 .containers-cards {
     display: flex;
@@ -22,8 +21,63 @@
     width: 24vw;
 }
 
+/* Estilização do cartão de crédito */
+.credit-card {
+    background-color: var(--secunday-color) !important;
+    max-width: 300px;
+    min-width: 300px;
+    color: #fff;
+}
+
+.credit-card-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.credit-card-chip {
+    display: flex;
+    align-items: center;
+    margin: 16px 0;
+}
+
+/* Estilização da tabela */
+.table-dashboard, .table-dashboard thead, .table-dashboard tbody, .table-dashboard tr, .table-dashboard th, .table-dashboard td { width: 100% }
+
+.table-dashboard thead {
+    background-color: var(--secunday-color);
+    color: #fff;
+}
+
+.table-dashboard tr, .table-dashboard th {
+    display: flex;
+    width: 100%;
+    padding: 8px;
+}
+
+/* Esconder valores */
+@keyframes glow {
+    from {background-color: #EEE;}
+    to {background-color: #f7f9fa;}
+}
+
+.hide {
+    width: calc(100% - 50px);
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    pointer-events: none;
+    animation: 2s ease 0s infinite alternate none running glow;
+}
+
 @media only screen and (max-width: 1024px) {   
     .containers-cards {
         flex-direction: column;
+    }
+    .card-dashboard {
+        width: calc(100% - 48px)
+    }
+    .containers-cards .card-margin {
+        margin-top: 40px;
     }
 }
