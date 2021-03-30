@@ -29,9 +29,9 @@ const Routes: React.FC = () => {
             <Switch>
                 {/* Home */}
                 <Route path="/" exact component={Landing} />
-                {/* login */}
+                {/* Login */}
                 <UnauthRoute path="/login" component={Login} />
-                {/* login */}
+                {/* Dashboard */}
                 <Route path="/dashboard" component={Dashboard} />
             </Switch>
         </BrowserRouter>

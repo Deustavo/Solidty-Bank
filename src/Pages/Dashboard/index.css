@@ -1,0 +1,17 @@
+.main-dashboard {
+    width: 60%;
+    margin: 0 auto 120px 80px;
+}
+
+.container-dashboard {
+    display: flex;
+    flex-direction: row;
+}
+
+@media only screen and (max-width: 1024px) {
+    .main-dashboard {
+        width: 80%;
+        margin: 0 10% 120px 10%;
+    }
+    .container-dashboard { flex-direction: column }
+}

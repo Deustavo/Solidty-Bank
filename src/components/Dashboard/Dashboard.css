@@ -5,7 +5,6 @@
     margin: 40px 0;
 }
 
-
 /* Estilização dos cards */
 .containers-cards {
     display: flex;
@@ -22,8 +21,28 @@
     width: 24vw;
 }
 
+/* Estilização da tabala */
+.table-dashboard, .table-dashboard thead, .table-dashboard tbody, .table-dashboard tr, .table-dashboard th, .table-dashboard td { width: 100% }
+
+.table-dashboard thead {
+    background-color: var(--secunday-color);
+    color: #fff;
+}
+
+.table-dashboard tr, .table-dashboard th {
+    display: flex;
+    width: 100%;
+    padding: 8px;
+}
+
 @media only screen and (max-width: 1024px) {   
     .containers-cards {
         flex-direction: column;
+    }
+    .card-dashboard {
+        width: calc(100% - 48px)
+    }
+    .containers-cards .credit-card {
+        margin-top: 40px;
     }
 }

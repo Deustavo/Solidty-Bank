@@ -72,6 +72,7 @@ const Balance: React.FC<AccountProps> = (props) => {
           </div>
         </div>
       </div>
+      
       <div className="containers-cards">
         <div className="main-card card-dashboard"  style={{ display: props.contaBanco ? 'flex' : 'none'}}>
           <img src={currentIcon} style={{ width: 28 }} alt="current icon" />
@@ -82,7 +83,7 @@ const Balance: React.FC<AccountProps> = (props) => {
           </div>
         </div>
 
-        <div className="main-card card-dashboard" style={{ display: props.contaCredito ? 'flex' : 'none'}}>
+        <div className="main-card card-dashboard credit-card" style={{ display: props.contaCredito ? 'flex' : 'none'}}>
           <img src={creditIcon} style={{ width: 28, marginTop: 4 }} alt="current icon" />
           <div style={{ marginLeft: 24, display: 'flex', flexDirection: 'column'}}>
             <p style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 12  }}>Cartão de Crédito</p>
