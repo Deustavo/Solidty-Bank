@@ -114,7 +114,7 @@ const Dashboard: React.FC = () => {
           </button>
 
         </nav>
-        <main style={{ width: '80%', margin: 'auto'}}>
+        <main style={{ width: '60%', margin: '0 auto 0 80px'}}>
           {/* Render component by currentScreen */}
           {/* visão geral */}
           {currentScreen === 'VisaoGeral' && <VisaoGeral />}

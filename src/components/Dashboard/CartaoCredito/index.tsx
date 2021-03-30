@@ -83,7 +83,7 @@ const Transactions: React.FC = () => {
     <div>
       {/* Componente para página principal */}      
 
-      <Balance contaBanco={contas?.contaBanco} contaCredito={contas?.contaCredito}/>
+      <Balance contaCredito={contas?.contaCredito} title="Cartão de crédito"/>
 
       <div>
         <p>Escolhe a quantidade de <strong>meses</strong> para o filtro: </p>

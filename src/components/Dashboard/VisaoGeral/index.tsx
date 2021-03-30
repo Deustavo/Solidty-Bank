@@ -81,13 +81,13 @@ const Transactions: React.FC = () => {
 
   if ( loaded )return (
     <div>
-      {/* Componente para página principal */}      
+      {/* Componente para página principal */}    
+      {console.log(`Olá ${user?.name.split(' ')[0]}, seja bem-vindo(a)!`)}
+      <Balance contaBanco={contas?.contaBanco} contaCredito={contas?.contaCredito} title={`Olá ${user?.name.split(' ')[0]}, seja bem-vindo(a)!`}/>
 
-      <Balance contaBanco={contas?.contaBanco} contaCredito={contas?.contaCredito}/>
-
-      <div>
-        <p>Escolhe a quantidade de <strong>meses</strong> para o filtro: </p>
-        <input  type="number" min={1} max={12} value={referenceDate} onChange={updateReference}/>
+      <div style={{ padding: '40px 0'}}>
+        <p style={{ fontWeight: 'bold', fontSize: 24 }}>Últimas movimentações </p>
+        <p>Filtrar por mês: <input  type="number" min={1} max={12} value={referenceDate} onChange={updateReference}/></p>
       </div>
 
       <Extract contaBanco={contas?.contaBanco} contaCredito={contas?.contaCredito}/>
