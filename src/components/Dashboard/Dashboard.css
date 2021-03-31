@@ -56,11 +56,6 @@
 }
 
 /* Esconder valores */
-@keyframes glow {
-    from {background-color: #EEE;}
-    to {background-color: #f7f9fa;}
-}
-
 .hide {
     width: calc(100% - 50px);
     text-indent: 100%;

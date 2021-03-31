@@ -1,9 +1,9 @@
 import React from 'react';
-
-import pixIcon from '../../../assets/svgs/pix-icon.svg';
+import './index.css';
 
 interface ComponentProp {
     title: string;
+    name: string;
     func: Function;
 }
 
@@ -14,12 +14,9 @@ const CardMenuMobile: React.FC<ComponentProp> = ( props ) => {
     }
 
     return (
-        <>
-            <div onClick={changeComponent}>
-                <img src={pixIcon} alt="pix icon" />
-                <span>{props.title}</span>
-            </div>
-        </>
+        <div className="background-card" onClick={changeComponent}>
+            <p>{props.name}</p>
+        </div>
     )
 }
 

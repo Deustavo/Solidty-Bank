@@ -15,7 +15,14 @@ body {
 }
 
 
-/* style cards */
+/* animações */
+@keyframes glow {
+    from {background-color: #EEE;}
+    to {background-color: #f7f9fa;}
+}
+
+
+/* estilizando cards */
 .main-card {
     background-color: #fff;
     box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
@@ -23,6 +30,44 @@ body {
     padding: 24px;
 }
 
+
+/* estilizando modal */
+.main-modal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+/* estilizando botão */
+.main-button {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 12px;
+    border-radius: 4px;
+    margin-top: 12px;
+    border: none;
+    cursor: pointer;
+    transition: all ease 300ms;
+    width: 100%;
+    font-weight: bold;
+}
+
+.main-button:hover {
+    background-color: var(--secunday-color);
+}
+
+
+/* tags de responsividade */
 .hidden-mobile { display: flex }
 .show-mobile { display: none }
 

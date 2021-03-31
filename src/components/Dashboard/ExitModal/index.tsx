@@ -7,13 +7,13 @@ interface ExitModalProps extends HTMLAttributes<HTMLDivElement> {
 
 const ExitModal: React.FC<ExitModalProps> = ({ setResponse, ...props }) => {
     return (
-        <div {...props} >
-            <div>
+        <div {...props} className="main-modal" >
+            <div className="main-card">
                 <h1>Tem certeza que deseja sair?</h1>
 
-                <div>
-                    <button onClick={() => setResponse(false)} >Cancelar</button>
-                    <button onClick={() => setResponse(true)}  >Tenho</button>
+                <div style={{ marginTop: 12 }}>
+                    <button className="main-button" onClick={() => setResponse(false)} >Continuar na plataforma</button>
+                    <button className="main-button" onClick={() => setResponse(true)}  >Sair</button>
                 </div>
             </div>
         </div>
