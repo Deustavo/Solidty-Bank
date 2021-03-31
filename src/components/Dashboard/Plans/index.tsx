@@ -10,7 +10,7 @@ const Plans: React.FC = () => {
   return (
     <div>
       <Container>
-      <h1>Movimentações</h1>
+      <h1 className="title-dashboard">Movimentações</h1>
       <Table striped>
       <thead>
         <tr className="titulo">

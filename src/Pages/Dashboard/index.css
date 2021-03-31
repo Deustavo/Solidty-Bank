@@ -1,6 +1,7 @@
 .main-dashboard {
     width: 60%;
     margin: 0 auto 120px auto;
+    padding-left: 212px;
 }
 
 .container-dashboard {
@@ -11,7 +12,8 @@
 @media only screen and (max-width: 1024px) {
     .main-dashboard {
         width: 80%;
-        margin: 0 10% 120px 10%;
+        margin: 112px 10% 120px 10%;
+        padding: 0;
     }
     .container-dashboard { flex-direction: column }
 }
