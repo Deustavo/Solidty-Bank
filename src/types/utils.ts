@@ -1,3 +1,3 @@
 export interface AnyObject {
-    [ ExtraKey: string ]: any;
+  [ExtraKey: string]: any
 }

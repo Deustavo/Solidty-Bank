@@ -1,12 +1,83 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.hidden-mobile { display: flex }
-.show-mobile { display: none }
+.hidden-mobile {
+  display: flex;
+}
+.show-mobile {
+  display: none;
+}
 
 @media only screen and (max-width: 1024px) {
-    .hidden-mobile { display: none }
-    .show-mobile { display: flex }
+  .hidden-mobile {
+    display: none;
+  }
+  .show-mobile {
+    display: flex;
+  }
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.header {
+  background-color: #5e60ce;
+  padding-top: 45px;
+}
+
+.header div {
+  margin-left: 80px;
+  width: 670px;
+  height: 165px;
+}
+
+.abraconta {
+  background-color: #5e60ce;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.abraconta .content {
+  color: #ffffff;
+  font-size: 80px;
+}
+
+.pecaagora {
+  background: linear-gradient(rgba(67, 69, 199, 0.4), rgba(67, 69, 199, 0.4)),
+    url("../assets/peoplebg.png") no-repeat;
+  padding-top: 80%;
+  position: relative;
+}
+
+.pecaagora .text,
+.pecaagora .text p.legend,
+.pecaagora .text p {
+  color: #ffffff;
+  font-size: 120px;
+  top: 40px;
+  width: 100%;
+  position: absolute;
+}
+
+.pecaagora .text p {
+  margin: 0 0 50px 80px;
+}
+.pecaagora .text p.legend {
+  font-size: 40px;
+  margin-left: 150px;
+  position: absolute;
+  top: 520px;
+}
+
+.cards {
+  display: flex;
+}
+
+.card img {
+  width: 70%;
+  margin-top: -40px;
+  margin-left: -140px;
 }

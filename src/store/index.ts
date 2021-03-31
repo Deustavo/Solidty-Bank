@@ -1,13 +1,13 @@
-import { createStore, Store } from 'redux';
-import { DashboardData } from './dashboard/types';
-import rootReducer from './rootReducer';
-import { UserData } from './user/types';
+import { createStore, Store } from "redux"
+import { DashboardData } from "./dashboard/types"
+import rootReducer from "./rootReducer"
+import { UserData } from "./user/types"
 
 export interface ApplicationStore {
-    user: UserData | null;
-    dashboard: DashboardData;
+  user: UserData | null
+  dashboard: DashboardData
 }
 
-const store: Store<ApplicationStore> = createStore( rootReducer );
+const store: Store<ApplicationStore> = createStore(rootReducer)
 
-export default store;
+export default store

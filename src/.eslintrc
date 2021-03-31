@@ -1,0 +1,29 @@
+{
+  "extends": ["prettier", "plugin:prettier/recommended"],
+  "plugins": ["prettier", "react", "react-hooks", "@typescript-eslint"],
+  "rules": {
+    "prettier/prettier": ["error"],
+    "no-use-before-define": 0,
+    "import/no-unresolved": 0,
+    "no-restricted-syntax": 0,
+    "no-param-reassign": ["error", { "props": false }],
+    "object-literal-sort-keys": 0,
+    "react/prefer-stateless-function": 0,
+    "react/jsx-indent": [0, "tab"],
+    "react/jsx-indent-props": [0, "tab"],
+    "react/jsx-props-no-spreading": 0,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-one-expression-per-line": 0,
+    "react/display-name": 1,
+    "react/no-danger-with-children": 1,
+    "react/no-deprecated": 1,
+    "react/no-children-prop": 1,
+
+    "react/prop-types": 0
+  },
+  "env": {
+    "jest": true,
+    "browser": true,
+    "node": true
+  }
+}
