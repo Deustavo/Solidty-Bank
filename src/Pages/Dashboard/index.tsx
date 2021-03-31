@@ -22,6 +22,19 @@ import PagarFatura from '../../components/Dashboard/PagarFatura';
 import Tranferencia from '../../components/Dashboard/Tranferencia';
 import Plans from '../../components/Dashboard/Plans';
 
+//import React from 'react';
+import { Nav, NavItem, NavLink } from 'reactstrap';
+import { Container } from './style';
+import { Button } from 'reactstrap';
+
+import Logo from '../../assets/Vector.png';
+import Visao from '../../assets/ImgMenu/visao.png';
+import Conta from '../../assets/ImgMenu/conta.png';
+import Adicionar from '../../assets/ImgMenu/adicionar.png';
+import Tranf from '../../assets/ImgMenu/transferencias.png';
+import Perfil from '../../assets/ImgMenu/Perfils.png';
+import Sair from '../../assets/ImgMenu/sair.png';
+
 const Dashboard: React.FC = () => {
   const history = useHistory();
   const dispatch = useDispatch();
@@ -82,19 +95,70 @@ const Dashboard: React.FC = () => {
           <FiAlignRight color="#000" size={ 60 } onClick={() => setModal()} ></FiAlignRight>
           </div>
         </div> 
-      
+
+
+        <div>
+      <Container>
+      <Nav className="sidenav" >
+        <NavItem>
+          <img src={Logo}></img>
+          <p>Solidty</p>
+          <p className="bank">Bank</p>
+        </NavItem>
+        <NavItem>
+          <img className="imgbtn"src={Visao}/>
+          <NavLink onClick={() => changeComponent('VisaoGeral')} selected={currentScreen === 'VisaoGeral'}>Visão Geral</NavLink>
+        </NavItem>
+        <NavItem>
+          <img className="imgbtn"src={Conta}/>
+          <NavLink onClick={() => changeComponent('ContaCorrente')} selected={currentScreen === 'ContaCorrente'}>Conta Corrente</NavLink>
+        </NavItem>
+        <NavItem>
+          <img className="imgbtn"src={Adicionar}/>
+          <NavLink onClick={() => changeComponent('AdicionarFundos')} selected={currentScreen === 'AdicionarFundos'} >Adicionar Fundos</NavLink>
+        </NavItem>
+        <NavItem>
+          <img className="imgbtn"src={Conta}/>  
+          <NavLink  onClick={() => changeComponent('CartaoCredito')} selected={currentScreen === 'CartaoCredito'}>Cartão de Crédito</NavLink>
+        </NavItem>
+        <NavItem>
+          <img className="imgbtn"src={Conta}/>
+          <NavLink  onClick={() => changeComponent('PagarFatura')} selected={currentScreen === 'PagarFatura'}>Pagar Fatura</NavLink>
+        </NavItem>
+        <NavItem>
+          <img className="imgbtn"src={Tranf}/>
+          <NavLink  onClick={() => changeComponent('Tranferencia')} selected={currentScreen === 'Tranferencia'}>Transferências</NavLink>
+        </NavItem>
+        <NavItem>
+          <img className="imgbtn"src={Conta}/>
+          <NavLink  href="#" onClick={() => changeComponent('Plans')} selected={currentScreen === 'Plans'}>Movimentações</NavLink>
+        </NavItem>
+        <NavItem>
+          <div className="perfil">
+            <img className="imgbtn"src={Perfil}/>
+            <NavLink  href="#">Perfil</NavLink>
+          </div>
+        </NavItem>
+        <NavItem>
+          <img className="imgbtn"src={Sair}/>
+          <Button className="sair" color="" size="sm" active><img className="btnimg" src={Sair} onClick={ () => setIsExiting(true) }/>Sair</Button>
+        </NavItem>
+      </Nav>
+      </Container>
+    </div>
+
         <div className="hidden-mobile">
           <nav>
             <img className="logo" src={gamaIcon} alt="Gama icon" />
             {/* visão geral */}
-            <CardMenu title='VisaoGeral' onClick={() => changeComponent('VisaoGeral')} selected={currentScreen === 'VisaoGeral'} />
+            <CardMenu  title='VisaoGeral' onClick={() => changeComponent('VisaoGeral')} selected={currentScreen === 'VisaoGeral'} />
 
             {/* conta corrente (apenas a parte do 'conta' que tem dentro do componente VisaoGeral)*/}
             {/* <CardMenu title='VisaoGeral' onClick={() => changeComponent('VisaoGeral')} selected={currentScreen === 'VisaoGeral'} /> */}
             <CardMenu title='ContaCorrente' onClick={() => changeComponent('ContaCorrente')} selected={currentScreen === 'ContaCorrente'} />
 
             {/* Adicionar fundos (apenas a parte do 'realize seu deposito' dentro com componente "depositos")*/}
-            <CardMenu title='AdicionarFundos' onClick={() => changeComponent('AdicionarFundos')} selected={currentScreen === 'AdicionarFundos'} />
+            <CardMenu className="teste" title='AdicionarFundos' onClick={() => changeComponent('AdicionarFundos')} selected={currentScreen === 'AdicionarFundos'} />
 
             {/* catão de credito (apenas a parte do 'cartão de credito' que tem dentro do componente VisaoGeral)*/}
             {/* <CardMenu title='VisaoGeral' onClick={() => changeComponent('VisaoGeral')} selected={currentScreen === 'VisaoGeral'} /> */}
@@ -108,13 +172,13 @@ const Dashboard: React.FC = () => {
             <CardMenu title='Tranferencia' onClick={() => changeComponent('Tranferencia')} selected={currentScreen === 'Tranferencia'} />
 
             {/* movimentações */}
-            <CardMenu title='Plans' onClick={() => changeComponent('Plans')} selected={currentScreen === 'Plans'} />
+            <CardMenu title='Movimentações' onClick={() => changeComponent('Plans')} selected={currentScreen === 'Plans'} />
 
             <button onClick={ () => setIsExiting(true) } >
               <FiLogOut color="#fff" size={ 20 } />
             </button>
           </nav>
-        </div>
+        </div> 
 
         <main className="main-dashboard">
           {/* Render component by currentScreen */}
