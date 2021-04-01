@@ -113,3 +113,51 @@ body {
     .hidden-mobile { display: none }
     .show-mobile { display: flex }
 }
+
+.abraconta {
+    background-color: #5e60ce;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .abraconta .content {
+    color: #ffffff;
+    font-size: 80px;
+  }
+  
+  .pecaagora {
+    background: linear-gradient(rgba(67, 69, 199, 0.4), rgba(67, 69, 199, 0.4)),
+      url("../assets/peoplebg.png") no-repeat;
+    padding-top: 80%;
+    position: relative;
+  }
+  
+  .pecaagora .text,
+  .pecaagora .text p.legend,
+  .pecaagora .text p {
+    color: #ffffff;
+    font-size: 120px;
+    top: 40px;
+    width: 100%;
+    position: absolute;
+  }
+  
+  .pecaagora .text p {
+    margin: 0 0 50px 80px;
+  }
+  .pecaagora .text p.legend {
+    font-size: 40px;
+    margin-left: 150px;
+    position: absolute;
+    top: 520px;
+  }
+  
+  .cards {
+    display: flex;
+  }
+  
+  .card img {
+    width: 70%;
+    margin-top: -40px;
+    margin-left: -140px;
+  }
