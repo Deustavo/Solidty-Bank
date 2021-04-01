@@ -70,26 +70,29 @@ const Login: React.FC = () => {
   }, [username, password, history]);
 
   return (
-    <>
+    <div className="form-page">
       <Header />
-        <Form ref={formRef} onSubmit={handleSubmit}>
-          Faça o login
+      <Form className="main-card form-login" ref={formRef} onSubmit={handleSubmit}>
+        <h1 style={{ marginBottom: 16 }}>Faça seu login!</h1>
+        <p>Usuário</p>
+        <Input name="username" value={username} onChange={e => setUsername(e.target.value)} placeholder="Digite seu usuário" autoFocus />
+        <p>Senha</p>
+        <Input name="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Digite sua senha" type="password" />
 
-          <Input name="username" value={username} onChange={e => setUsername(e.target.value)} placeholder="Digite seu usuário" autoFocus />
-          <Input name="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Digite sua senha" type="password" />
-
-          {loading ? <Loader /> : <Button
+        {loading ? <Loader /> :
+          <Button
             type="submit"
             text="Continuar"
             Icon={FaArrowRight}
             className="form-button"
           />
-          }
-
-          <Link to="/recover">Esqueci minha senha</Link>
-          <Link to="/">Ainda não sou cliente</Link>
-        </Form>
-    </>
+        }
+        <div style={{ display: 'flex', width: '100%', textAlign: 'center', flexDirection: 'column'}}>
+          <Link style={{ marginTop: 12, fontSize: 14 }} to="/recover">Recuperar minha senha</Link>
+          <Link style={{ marginTop: 8, fontSize: 14 }} to="/">Ainda não é cliente? cadastre-se aqui!</Link>
+        </div>
+      </Form>
+    </div>
   );
 }
 
