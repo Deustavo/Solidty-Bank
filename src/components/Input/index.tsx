@@ -46,7 +46,7 @@ const Input: React.FC<InputProps> = ({ name, ...props }) => {
 
         {error && (
           <Tooltip message={error}>
-            <FiAlertCircle color="#f42121" size={20} />
+            <FiAlertCircle color="#f42121" size={16} />
           </Tooltip>
         )}
     </>

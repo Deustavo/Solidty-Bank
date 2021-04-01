@@ -73,7 +73,7 @@ const Login: React.FC = () => {
     <div className="form-page">
       <Header />
       <Form className="main-card form-login" ref={formRef} onSubmit={handleSubmit}>
-        <h1>Faça o login</h1>
+        <h1 style={{ marginBottom: 16 }}>Faça seu login!</h1>
         <p>Usuário</p>
         <Input name="username" value={username} onChange={e => setUsername(e.target.value)} placeholder="Digite seu usuário" autoFocus />
         <p>Senha</p>
@@ -87,9 +87,10 @@ const Login: React.FC = () => {
             className="form-button"
           />
         }
-
-        <Link to="/recover">Esqueci minha senha</Link>
-        <Link to="/">Ainda não sou cliente</Link>
+        <div style={{ display: 'flex', width: '100%', textAlign: 'center', flexDirection: 'column'}}>
+          <Link style={{ marginTop: 12, fontSize: 14 }} to="/recover">Recuperar minha senha</Link>
+          <Link style={{ marginTop: 8, fontSize: 14 }} to="/">Ainda não é cliente? cadastre-se aqui!</Link>
+        </div>
       </Form>
     </div>
   );

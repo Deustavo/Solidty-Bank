@@ -7,9 +7,9 @@ interface TooltipProps {
 
 const Tooltip: React.FC<TooltipProps> = ({ message, className, children }) => {
   return (
-    <div className={className}>
+    <div className={className} style={{ display: 'flex', alignItems: 'center', marginBottom: 12 }}>
       {children}
-      <span>{message}</span>
+      <p style={{ marginLeft: 4, fontSize: 14 }}>{message}</p>
     </div>
   );
 }

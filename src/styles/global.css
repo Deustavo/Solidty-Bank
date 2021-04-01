@@ -72,7 +72,7 @@ body {
 
 /* Estilizando input */
 .main-input {
-    margin: 4px 0 12px 0;
+    margin: 4px 0 8px 0;
     padding: 12px;
     border: var(--primary-color) 2px solid;
     border-radius: 4px;
@@ -104,6 +104,10 @@ body {
     width: 40vw;
 }
 
+@media only screen and (max-width: 1024px) {
+  .form-login { width: calc(80vw - 32px); }
+}
+
 
 /* tags de responsividade */
 .hidden-mobile { display: flex }
@@ -114,6 +118,8 @@ body {
     .show-mobile { display: flex }
 }
 
+
+/* dashboard */
 .abraconta {
     background-color: #5e60ce;
     display: flex;

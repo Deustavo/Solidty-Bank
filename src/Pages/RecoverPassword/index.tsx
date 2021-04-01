@@ -115,19 +115,16 @@ const RecoverPassword: React.FC = () => {
 
 
     return (
-        <>
+        <div className="form-page">
             <Header />
 
             <div>
                 {isValidUsername ? (
-                    <Form ref={formPasswordRef} onSubmit={handleSubmitNewPassword}>
-                        <h2>Esqueci minha senha</h2>
+                    <Form className="main-card form-login" ref={formPasswordRef} onSubmit={handleSubmitNewPassword}>
+                        <h1 style={{ marginBottom: 16 }}>Esqueci minha senha</h1>
                         <p>Confirme seu nome de usuário e escolha uma nova senha</p>
-
-                        <div className="has-animation">
-                            <Input name="password" type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Digite sua nova senha" autoFocus />
-                            <Input name="confirmPassword" type="password" value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)} placeholder="Confirme sua nova senha" />
-                        </div>
+                        <Input name="password" type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Digite sua nova senha" autoFocus />
+                        <Input name="confirmPassword" type="password" value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)} placeholder="Confirme sua nova senha" />
 
                         {loading ? <Loader /> : <Button
                             text="Enviar"
@@ -137,13 +134,10 @@ const RecoverPassword: React.FC = () => {
                         />}
                     </Form>
                 ) : (
-                        <Form ref={formUsernameRef} onSubmit={handleSubmitUsername} >
-                            <h2>Esqueci minha senha</h2>
+                        <Form className="main-card form-login" ref={formUsernameRef} onSubmit={handleSubmitUsername} >
+                            <h1 style={{ marginBottom: 16 }}>Esqueci minha senha</h1>
                             <p>Confirme seu nome de usuário e escolha uma nova senha</p>
-
-                            <div>
-                                <Input name="username" value={username} onChange={e => setUsername(e.target.value)} placeholder="Confirme seu nome de usuário" autoFocus />
-                            </div>
+                            <Input name="username" value={username} onChange={e => setUsername(e.target.value)} placeholder="Confirme seu nome de usuário" autoFocus />
 
                             {loading ? <Loader /> : <Button
                                 text="Prosseguir"
@@ -154,7 +148,7 @@ const RecoverPassword: React.FC = () => {
                         </Form>
                     )}
             </div>
-        </>
+        </div>
     );
 }
 

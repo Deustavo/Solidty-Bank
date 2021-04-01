@@ -31,6 +31,8 @@ const Routes: React.FC = () => {
                 <Route path="/" exact component={Landing} />
                 {/* Login */}
                 <UnauthRoute path="/login" component={Login} />
+                {/* Recuperar senha */}
+                <UnauthRoute path="/recover" component={RecoverPassword} />
                 {/* Dashboard */}
                 <Route path="/dashboard" component={Dashboard} />
             </Switch>
