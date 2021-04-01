@@ -1,13 +1,19 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
-import LogoSRC from '../../assets/main-logo.png';
+import LogoSRC from '../../assets/Vector.png';
 
 const Logo: React.FC = () => {
     const history = useHistory();
 
     return (
-        <img onClick={ () => history.push('/') } src={ LogoSRC } alt="Logo principal" />
+        <div style={{ display: 'flex' }}>
+            <img style={{ width: 40 }} onClick={ () => history.push('/') } src={ LogoSRC } alt="Logo principal" />
+            <div style={{ marginLeft: 16, color: '#FFF' }}>
+                <p style={{ fontWeight: 'bold', marginTop: 8 }}>Solidty</p>
+                <p>Bank</p>
+            </div>
+        </div>
     );
 }
 

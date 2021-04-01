@@ -37,6 +37,7 @@ const Input: React.FC<InputProps> = ({ name, ...props }) => {
   return (
     <>
         <input
+          className="main-input"
           onFocus={handleInputFocus}
           onBlur={handleInputBlur}
           defaultValue={defaultValue}

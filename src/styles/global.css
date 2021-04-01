@@ -60,10 +60,48 @@ body {
     transition: all ease 300ms;
     width: 100%;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .main-button:hover {
     background-color: var(--secunday-color);
+}
+
+
+/* Estilizando input */
+.main-input {
+    margin: 4px 0 12px 0;
+    padding: 12px;
+    border: var(--primary-color) 2px solid;
+    border-radius: 4px;
+    transition: all ease 300ms;
+    outline: none;
+}
+
+.main-input:focus, .main-input:hover {
+    border: var(--secunday-color) 2px solid;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+}
+
+
+/* Estilizando páginas de formulário */
+.form-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--primary-color);
+}
+
+.form-login {
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
 }
 
 
