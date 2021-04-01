@@ -5,7 +5,7 @@ import { FaArrowRight } from 'react-icons/fa';
 import { Form } from '@unform/web';
 import * as yup from 'yup';
 
-import Button from '../../components/Button';
+import Button from '../../components/Button/main';
 import Header from '../../components/Header';
 
 import api from '../../services/api';

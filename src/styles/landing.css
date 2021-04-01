@@ -1,0 +1,62 @@
+/* dashboard */
+.abraconta {
+    padding-top: 180px;
+    background-color: #5e60ce;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 10%;
+    height: 100vh;
+}
+
+.abraconta img {
+    width: 40vw;
+    height: 40vw;
+}
+
+.abraconta .content {
+    color: #ffffff;
+    font-size: 80px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 100px;
+}
+
+.pecaagora {
+    background: linear-gradient(rgba(67, 69, 199, 0.4), rgba(67, 69, 199, 0.4)), url("../assets/peoplebg.png") no-repeat;
+    padding-top: 80%;
+    position: relative;
+}
+
+.pecaagora .text,
+.pecaagora .text p.legend,
+.pecaagora .text p {
+    color: #ffffff;
+    font-size: 120px;
+    top: 40px;
+    width: 100%;
+    position: absolute;
+}
+
+.pecaagora .text p {
+    margin: 0 0 50px 80px;
+}
+.pecaagora .text p.legend {
+    font-size: 40px;
+    margin-left: 150px;
+    position: absolute;
+    top: 520px;
+}
+
+.cards {
+    display: flex;
+}
+
+.card img {
+    width: 70%;
+    margin-top: -40px;
+    margin-left: -140px;
+}

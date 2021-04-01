@@ -9,6 +9,8 @@ import getValidationErrors from "../../utils/getValidationErrors"
 import { maskCPF, removeMaskCPF } from "../../utils/mask"
 
 import Header from "../../components/Header"
+import ButtonSecodary from '../../components/Button/secondary'
+import ButtonOutline from '../../components/Button/outline'
 import Input from "../../components/Input"
 import Loader from "../../components/Loader"
 import { toast } from "react-toastify"
@@ -17,6 +19,8 @@ import { UserResponse } from "../../types/user"
 import updateReduxState from "../../services/updateReduxState"
 import womanBank from "../../assets/picture-woman.png"
 import cardBank from "../../assets/cards.png"
+
+import "../../styles/landing.css"
 
 const Landing: React.FC = () => {
   const [username, setUsername] = useState("")
@@ -130,13 +134,23 @@ const Landing: React.FC = () => {
       <Header />
 
       <section className="abraconta">
-        <div>
-          <img src={womanBank} alt="Garota propaganda" />
-        </div>
+        <img src={womanBank} alt="Garota propaganda" />
         <div className="content">
-          <p>
-            Lorem ipsum dolor sit amet <b>consectetur</b>
-          </p>
+          <p>Lorem ipsum dolor sit amet <b>consectetur</b></p>
+          <a href="">
+            <ButtonSecodary
+              type="submit"
+              text="Criar nova conta"
+              className="form-button"
+            />
+          </a>
+          <a href="/login">
+            <ButtonOutline
+              type="submit"
+              text="Acessar minha conta"
+              className="form-button"
+            />
+          </a>
         </div>
       </section>
 
@@ -144,7 +158,6 @@ const Landing: React.FC = () => {
         <figure className="pecaagora">
           <figcaption className="text">
             <p>
-              {" "}
               Peça já
               <br /> seu cartão <br />
               <b>Solidty</b>

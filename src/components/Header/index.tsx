@@ -4,9 +4,19 @@ import Logo from '../Logo';
 const Header = () => {
   return (
     <header>
-      <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', padding: '16px 10%' }}>
+      <a
+      href="/"
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100vw',
+        padding: '16px 10%',
+        backgroundColor: 'var(--primary-color)',
+        zIndex: 1
+      }}>
         <Logo />
-      </div>
+      </a>
     </header>
   )
 }

@@ -1,0 +1,45 @@
+/* estilizando botão */
+.button {
+    padding: 12px;
+    border-radius: 4px;
+    margin-top: 12px;
+    border: none;
+    cursor: pointer;
+    transition: all ease 300ms;
+    width: 100%;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-button {
+    background-color: var(--primary-color);
+    border: var(--primary-color) 3px solid;
+    color: #fff;
+}
+
+.main-button:hover {
+    background-color: var(--secunday-color);
+}
+
+.secondary-button {
+    background-color: #fff;
+    border: #fff 3px solid;
+    color: var(--primary-color);
+}
+
+.secondary-button:hover {
+    background-color: #eeee;
+}
+
+.outline-button {
+    background-color: transparent;
+    border: #fff 3px solid;
+    color: #fff;
+}
+
+.outline-button:hover {
+    background-color: #fff;
+    color: var(--primary-color);
+}

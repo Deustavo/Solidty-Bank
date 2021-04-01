@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaArrowLeft } from 'react-icons/fa';
 import { FaRegSadTear } from 'react-icons/fa';
-import Button from '../../components/Button/';
+import Button from '../../components/Button/main';
 import Header from '../../components/Header';
 
 

@@ -4,7 +4,7 @@ import { FaArrowLeft } from 'react-icons/fa';
 import { useHistory } from 'react-router-dom';
 
 
-import Button from '../../components/Button';
+import Button from '../../components/Button/main';
 import Header from '../../components/Header';
 
 const Error: React.FC = () => {
