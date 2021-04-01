@@ -7,7 +7,7 @@ import api from '../../services/api';
 import { FormHandles } from '@unform/core';
 import * as yup from 'yup';
 
-import Button from '../../components/Button';
+import Button from '../../components/Button/main';
 import Header from '../../components/Header';
 import Input from '../../components/Input';
 import Loader from '../../components/Loader';

@@ -7,7 +7,7 @@ import Login from './Pages/Login';
 import RecoverPassword from './Pages/RecoverPassword';
 import Error from './Pages/Error';
 import getIsAuth from './services/getIsAuth';
-import ErrorRecover from './Pages/ErrorRecover';
+// import ErrorRecover from './Pages/ErrorRecover';
 
 const PrivateRoute: React.FC<RouteProps> = (props) => {
     const isAuth = getIsAuth();
@@ -35,6 +35,8 @@ const Routes: React.FC = () => {
                 <UnauthRoute path="/recover" component={RecoverPassword} />
                 {/* Dashboard */}
                 <Route path="/dashboard" component={Dashboard} />
+                {/* Error */}
+                <Route path="/error" component={Error} />
             </Switch>
         </BrowserRouter>
     );

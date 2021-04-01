@@ -4,7 +4,7 @@ import { FaArrowLeft } from 'react-icons/fa';
 import { useHistory } from 'react-router-dom';
 
 
-import Button from '../../components/Button';
+import Button from '../../components/Button/main';
 import Header from '../../components/Header';
 
 const Error: React.FC = () => {
@@ -17,9 +17,9 @@ const Error: React.FC = () => {
     return (
         <>
             <Header />
-                    <FiAlertTriangle className="icon" size={102} />
-                    <h3>Oops, algo deu errado!</h3>
-                    <Button text="Voltar" Icon={FaArrowLeft} onClick={handleGoBack} />
+            <FiAlertTriangle className="icon" size={102} />
+            <h3>Oops, algo deu errado!</h3>
+            <Button text="Voltar" Icon={FaArrowLeft} onClick={handleGoBack} />
         </>
     );
 }

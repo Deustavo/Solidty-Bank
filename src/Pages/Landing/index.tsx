@@ -9,6 +9,8 @@ import getValidationErrors from "../../utils/getValidationErrors"
 import { maskCPF, removeMaskCPF } from "../../utils/mask"
 
 import Header from "../../components/Header"
+import ButtonSecodary from '../../components/Button/secondary'
+import ButtonOutline from '../../components/Button/outline'
 import Input from "../../components/Input"
 import Loader from "../../components/Loader"
 import { toast } from "react-toastify"
@@ -17,6 +19,8 @@ import { UserResponse } from "../../types/user"
 import updateReduxState from "../../services/updateReduxState"
 import womanBank from "../../assets/picture-woman.png"
 import cardBank from "../../assets/cards.png"
+
+import "../../styles/landing.css"
 
 const Landing: React.FC = () => {
   const [username, setUsername] = useState("")
@@ -130,32 +134,31 @@ const Landing: React.FC = () => {
       <Header />
 
       <section className="abraconta">
-        <div>
-          <img src={womanBank} alt="Garota propaganda" />
-        </div>
+        <img src={womanBank} alt="Garota propaganda" />
         <div className="content">
-          <p>
-            Lorem ipsum dolor sit amet <b>consectetur</b>
-          </p>
+          <p className="title">O banco digital que você pode confiar</p>
+          <a href="/#cadastro">
+            <ButtonSecodary
+              type="submit"
+              text="Criar nova conta"
+              className="form-button"
+            />
+          </a>
+          <a href="/login">
+            <ButtonOutline
+              type="submit"
+              text="Acessar minha conta"
+              className="form-button"
+            />
+          </a>
         </div>
       </section>
 
       <section>
-        <figure className="pecaagora">
-          <figcaption className="text">
-            <p>
-              {" "}
-              Peça já
-              <br /> seu cartão <br />
-              <b>Solidty</b>
-            </p>
-            <p className="legend">
-              Duis aute irure dolor in
-              <br /> reprehenderit in voluptate
-              <br /> velit esse cillum nulla pariatur.
-            </p>
-          </figcaption>
-        </figure>
+        <div className="pecaagora">
+          <p className="title">Modernidade<br /><b>e segurança</b></p>
+          <p className="legend">Duis aute irure dolor in<br /> reprehenderit in voluptate<br /> velit esse cillum nulla pariatur.</p>
+        </div>
       </section>
 
       <section className="cards">
@@ -163,66 +166,55 @@ const Landing: React.FC = () => {
           <img src={cardBank} alt="Cartões Solidty" />
         </div>
         <div className="content">
-          <p>
-            Confiança <br />
-            <b>e solidez</b>
-          </p>
-          <p>
-            Duis aute irure
-            <br />
-            dolor in
-            <br />
-            reprehenderit in
-            <br />
-            voluptate
-            <br />
-            velit esse cilium
-            <br />
-            nulla pariatur
-          </p>
+          <p className="title">Confiança <br/><b>e solidez</b></p>
+          <p className="text">Pensar em algum texto genérico porém <br /> chamativo que motive as pessoas<br /> a assinarem os cartões da solid</p>
         </div>
       </section>
 
-      <section>
-        <div>
-          <Form ref={formRef} onSubmit={handleSubmit}>
-            <h1> Peça sua conta e cartão de crédito do Gama Bank</h1>
-            <Input
-              name="cpf"
-              maxLength={14}
-              value={cpfMask}
-              onChange={handleSetCpfMask}
-              placeholder="Digite seu CPF"
+      <section id="cadastro">
+        <h1>Peça já seu<br />cartão Solid</h1>
+        <Form className="form-cadastro" ref={formRef} onSubmit={handleSubmit}>
+          <Input
+            name="cpf"
+            maxLength={14}
+            value={cpfMask}
+            onChange={handleSetCpfMask}
+            placeholder="Digite seu CPF"
+          />
+          <Input
+            name="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            placeholder="Nome de usuário"
+          />
+          <Input
+            name="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Nome completo"
+          />
+          <Input
+            name="password"
+            value={password}
+            type="password"
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Digite sua senha"
+          />
+          <Input
+            name="confirmPassword"
+            value={confirmPassword}
+            type="password"
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            placeholder="Confirme sua senha"
+          />
+          {loading ? <Loader /> :
+            <ButtonSecodary
+              type="submit"
+              text="Criar sua conta"
+              className="form-button"
             />
-            <Input
-              name="username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              placeholder="Nome de usuário"
-            />
-            <Input
-              name="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="Nome completo"
-            />
-            <Input
-              name="password"
-              value={password}
-              type="password"
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Digite sua senha"
-            />
-            <Input
-              name="confirmPassword"
-              value={confirmPassword}
-              type="password"
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              placeholder="Confirme sua senha"
-            />
-            {loading ? <Loader /> : <button type="submit">Criar sua conta</button>}
-          </Form>
-        </div>
+          }
+        </Form>
       </section>
     </>
   )

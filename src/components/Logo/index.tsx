@@ -10,7 +10,7 @@ const Logo: React.FC = () => {
         <div style={{ display: 'flex' }}>
             <img style={{ width: 40 }} onClick={ () => history.push('/') } src={ LogoSRC } alt="Logo principal" />
             <div style={{ marginLeft: 16, color: '#FFF' }}>
-                <p style={{ fontWeight: 'bold', marginTop: 8 }}>Solidty</p>
+                <p style={{ fontWeight: 'bold' }}>Solidty</p>
                 <p>Bank</p>
             </div>
         </div>
