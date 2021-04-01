@@ -17,9 +17,9 @@ const Error: React.FC = () => {
     return (
         <>
             <Header />
-                    <FiAlertTriangle className="icon" size={102} />
-                    <h3>Oops, algo deu errado!</h3>
-                    <Button text="Voltar" Icon={FaArrowLeft} onClick={handleGoBack} />
+            <FiAlertTriangle className="icon" size={102} />
+            <h3>Oops, algo deu errado!</h3>
+            <Button text="Voltar" Icon={FaArrowLeft} onClick={handleGoBack} />
         </>
     );
 }
