@@ -2,7 +2,9 @@
   "extends": ["prettier", "plugin:prettier/recommended"],
   "plugins": ["prettier", "react", "react-hooks", "@typescript-eslint"],
   "rules": {
-    "prettier/prettier": ["error"],
+    "prettier/prettier": ["error",{
+      "endOfLine": "auto"}
+    ],
     "no-use-before-define": 0,
     "import/no-unresolved": 0,
     "no-restricted-syntax": 0,
