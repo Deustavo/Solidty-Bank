@@ -145,7 +145,10 @@ const Dashboard: React.FC = () => {
               </NavItem>
               <NavItem>
                 <img className="imgbtn"src={Sair}/>
-                <Button className="sair" color="" size="sm" active><img className="btnimg" src={Sair} onClick={ () => setIsExiting(true) }/>Sair</Button>
+                <Button className="sair" color="" size="sm" active onClick={ () => setIsExiting(true) }>
+                  <img className="btnimg" src={Sair}/>
+                  Sair
+                </Button>
               </NavItem>
             </Nav>
           </Container>

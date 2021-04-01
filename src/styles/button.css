@@ -25,7 +25,7 @@
 
 .secondary-button {
     background-color: #fff;
-    border: #fff 3px solid;
+    border: var(--primary-color) 3px solid;
     color: var(--primary-color);
 }
 
