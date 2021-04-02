@@ -1,22 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import currentIcon from '../../../assets/svgs/current-icon.svg';
-import creditIcon from '../../../assets/svgs/credit-card-icon.svg';
-import { Conta } from '../../../types/dash-board';
-import { FiEye, FiEyeOff } from 'react-icons/fi';
-import { ApplicationStore } from '../../../store';
-import { useSelector } from 'react-redux';
-import '../Dashboard.css';
-
+import React, { useState, useEffect } from "react";
+import currentIcon from "../../../assets/svgs/current-icon.svg";
+import creditIcon from "../../../assets/svgs/credit-card-icon.svg";
+import { Conta } from "../../../types/dash-board";
+import { FiEye, FiEyeOff } from "react-icons/fi";
+import { ApplicationStore } from "../../../store";
+import { useSelector } from "react-redux";
+import "../Dashboard.css";
 
 interface Total {
-  banco: number,
-  credito: number,
+  banco: number;
+  credito: number;
 }
 
 interface AccountProps {
-  contaBanco?: Conta,
-  contaCredito?: Conta,
-  title?: string
+  contaBanco?: Conta;
+  contaCredito?: Conta;
+  title?: string;
 }
 
 const Balance: React.FC<AccountProps> = (props) => {
@@ -26,14 +25,13 @@ const Balance: React.FC<AccountProps> = (props) => {
     banco: 0,
     credito: 0,
   });
-  const [user, setUser] = useState('');
+  const [user, setUser] = useState("");
   const [hide, setHide] = useState(false);
   const store = useSelector((state: ApplicationStore) => state.user);
 
   useEffect(() => {
-    if (store)
-      setUser(store.name);
-  }, [store])
+    if (store) setUser(store.name);
+  }, [store]);
 
   useEffect(() => {
     setContaBanco(props.contaBanco);
@@ -42,76 +40,154 @@ const Balance: React.FC<AccountProps> = (props) => {
       banco: 0,
       credito: 0,
     });
-    contaBanco?.lancamentos.forEach(lancamento => {
+    contaBanco?.lancamentos.forEach((lancamento) => {
       setTotalTransactions((previewState) => ({
         ...previewState,
-        banco: previewState.banco += lancamento.valor
-      }))
+        banco: (previewState.banco += lancamento.valor),
+      }));
     });
 
-    contaCredito?.lancamentos.forEach(lancamento => {
+    contaCredito?.lancamentos.forEach((lancamento) => {
       setTotalTransactions((previewState) => ({
         ...previewState,
-        credito: previewState.credito += lancamento.valor
-      })
-      );
-    })
-  }, [contaBanco?.lancamentos, contaCredito?.lancamentos, props.contaBanco, props.contaCredito])
+        credito: (previewState.credito += lancamento.valor),
+      }));
+    });
+  }, [
+    contaBanco?.lancamentos,
+    contaCredito?.lancamentos,
+    props.contaBanco,
+    props.contaCredito,
+  ]);
 
   const hideOrShowInformations = () => {
     setHide(!hide);
-  }
+  };
 
   return (
     <>
       <div>
-        <div className="title-dashboard" style={{ display: 'flex', justifyContent: 'space-between'}}>
+        <div
+          className="title-dashboard"
+          style={{ display: "flex", justifyContent: "space-between" }}
+        >
           <p>{props.title}</p>
-          <div style={{color: 'var(--secunday-color)'}}>
-            {!hide ? <FiEye size={35} onClick={() => hideOrShowInformations()} /> : <FiEyeOff size={35} onClick={() => hideOrShowInformations()} />}
+          <div style={{ color: "var(--secunday-color)" }}>
+            {!hide ? (
+              <FiEye size={35} onClick={() => hideOrShowInformations()} />
+            ) : (
+              <FiEyeOff size={35} onClick={() => hideOrShowInformations()} />
+            )}
           </div>
         </div>
       </div>
-      
-      <div className="containers-cards">
-        <div className="main-card card-dashboard"  style={{ display: props.contaBanco ? 'flex' : 'none'}}>
-          <img src={currentIcon} style={{ width: 28 }} alt="current icon" />
-          <div style={{ marginLeft: 24, display: 'flex', flexDirection: 'column', width: '100%'}}>
-            <p style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 12 }}>Conta</p>
-            <p style={{ color: '#808080'}}>Saldo disponivel</p>
-            <h3 className={`value acccount ${hide ? 'hide' : ''}`} title={contaBanco?.saldo.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })} style={{ color: 'var(--primary-color)', fontSize: 48}}>{contaBanco?.saldo.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h3>
-          </div>
-        </div>        
 
-        <div className="main-card credit-card" style={{ display: props.title === "Cartão de crédito" ? "block" : "none" }}>
+      <div className="containers-cards">
+        <div
+          className="main-card card-dashboard"
+          style={{ display: props.contaBanco ? "flex" : "none" }}
+        >
+          <img src={currentIcon} style={{ width: 28 }} alt="current icon" />
+          <div
+            style={{
+              marginLeft: 24,
+              display: "flex",
+              flexDirection: "column",
+              width: "100%",
+            }}
+          >
+            <p style={{ fontSize: 24, fontWeight: "bold", marginBottom: 12 }}>
+              Conta
+            </p>
+            <p style={{ color: "#808080" }}>Saldo disponivel</p>
+            <h3
+              className={`value acccount ${hide ? "hide" : ""}`}
+              title={contaBanco?.saldo.toLocaleString("pt-br", {
+                style: "currency",
+                currency: "BRL",
+              })}
+              style={{ color: "var(--primary-color)", fontSize: 48 }}
+            >
+              {contaBanco?.saldo.toLocaleString("pt-br", {
+                style: "currency",
+                currency: "BRL",
+              })}
+            </h3>
+          </div>
+        </div>
+
+        <div
+          className="main-card credit-card"
+          style={{
+            display: props.title === "Cartão de crédito" ? "block" : "none",
+          }}
+        >
           <div className="credit-card-logo">
-            <img src="./card/masterCardLogo.png" style={{width: 70}}/>
+            <img src="./card/masterCardLogo.png" style={{ width: 70 }} />
             <h1>Solidty</h1>
           </div>
           <div className="credit-card-chip">
-            <img src="./card/chip.png"/>
-            <img src="./card/nfc.png"/>
+            <img src="./card/chip.png" />
+            <img src="./card/nfc.png" />
           </div>
-          <p style={{fontSize: 20}}>{user}</p>
+          <p style={{ fontSize: 20 }}>{user}</p>
         </div>
 
-        <div className="main-card card-dashboard card-margin" style={{ display: props.contaCredito ? 'flex' : 'none'}}>
-          <img src={creditIcon} style={{ width: 28, marginTop: 4 }} alt="current icon" />
-          <div style={{ marginLeft: 24, display: 'flex', flexDirection: 'column', width: '100%'}}>
-            <p style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 12  }}>Cartão de Crédito</p>
-            <p style={{ color: '#808080'}}>Fatura em aberto</p>
-            <h3 className={`value credit ${hide ? 'hide' : ''}`} title={contaCredito?.saldo.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })} style={{ color: '#ff4949' }}>{contaCredito?.saldo.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h3>
+        <div
+          className="main-card card-dashboard card-margin"
+          style={{ display: props.contaCredito ? "flex" : "none" }}
+        >
+          <img
+            src={creditIcon}
+            style={{ width: 28, marginTop: 4 }}
+            alt="current icon"
+          />
+          <div
+            style={{
+              marginLeft: 24,
+              display: "flex",
+              flexDirection: "column",
+              width: "100%",
+            }}
+          >
+            <p style={{ fontSize: 24, fontWeight: "bold", marginBottom: 12 }}>
+              Cartão de Crédito
+            </p>
+            <p style={{ color: "#808080" }}>Fatura em aberto</p>
+            <h3
+              className={`value credit ${hide ? "hide" : ""}`}
+              title={contaCredito?.saldo.toLocaleString("pt-br", {
+                style: "currency",
+                currency: "BRL",
+              })}
+              style={{ color: "#ff4949" }}
+            >
+              {contaCredito?.saldo.toLocaleString("pt-br", {
+                style: "currency",
+                currency: "BRL",
+              })}
+            </h3>
             <div style={{ marginTop: 12 }}>
-              <p style={{ color: '#808080'}}>Limite disponivel</p>
-              <h3 className={hide ? 'hide' : ''} title={totalTransactions.credito.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })} style={{ color: '#13ce66' }}>{totalTransactions.credito.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h3>
+              <p style={{ color: "#808080" }}>Limite disponivel</p>
+              <h3
+                className={hide ? "hide" : ""}
+                title={totalTransactions.credito.toLocaleString("pt-br", {
+                  style: "currency",
+                  currency: "BRL",
+                })}
+                style={{ color: "#13ce66" }}
+              >
+                {totalTransactions.credito.toLocaleString("pt-br", {
+                  style: "currency",
+                  currency: "BRL",
+                })}
+              </h3>
             </div>
           </div>
         </div>
-        
       </div>
     </>
-
   );
-}
+};
 
 export default Balance;

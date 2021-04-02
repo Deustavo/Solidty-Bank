@@ -27,7 +27,6 @@ Para iniciar o projeto em modo desenvolvimento use o comando `yarn start` ou `np
 
 9 - Link de sua To do deve acompanhar na documentação de seu projeto.
 
-
 [Swagger](https://accenture-java-desafio.herokuapp.com/swagger-ui.html#/)
 
 [Arquivo de Referência para API - Insomnia](https://drive.google.com/file/d/1QJ5MnaidHOO4iRihoUB6rsvA-E99OIAQ/view?usp=sharing)
@@ -40,6 +39,5 @@ Para iniciar o projeto em modo desenvolvimento use o comando `yarn start` ou `np
 - [x] Temos um modelo de organização de tarefas você pode visualizar [clicando aqui](https://www.notion.so/2cb3a2864f5143f99a2bc3b4e7cb1247?v=bb4cfdb8149041e0974c3c6f5cf6573d).
 - [x] Em caso de dúvidas, chamem no Slack.
 
-
 Boa sorte!
-Att: Douglas 
+Att: Douglas

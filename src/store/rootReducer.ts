@@ -1,9 +1,9 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from "redux";
 
-import dashboardReducer from './dashboard';
-import userReducer from './user';
+import dashboardReducer from "./dashboard";
+import userReducer from "./user";
 
 export default combineReducers({
-    user: userReducer,
-    dashboard: dashboardReducer
+  user: userReducer,
+  dashboard: dashboardReducer,
 });
