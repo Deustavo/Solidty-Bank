@@ -1,41 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam:wght@300;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam:wght@300;500;700&display=swap");
 
 :root {
-    --primary-color: #5E60CE;
-    --secunday-color: #474898;
+  --primary-color: #5e60ce;
+  --secunday-color: #474898;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
 }
 
-html { scroll-behavior: smooth }  
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-    font-family: 'Be Vietnam', sans-serif;
-    font-weight: 100 !important;
-    background-color: #f7f9fa;
-    overflow-x: hidden;
+  font-family: "Be Vietnam", sans-serif;
+  font-weight: 100 !important;
+  background-color: #f7f9fa;
+  overflow-x: hidden;
 }
-
 
 /* animações */
 @keyframes glow {
-    from {background-color: #EEE;}
-    to {background-color: #f7f9fa;}
+  from {
+    background-color: #eee;
+  }
+  to {
+    background-color: #f7f9fa;
+  }
 }
-
 
 /* estilizando cards */
 .main-card {
-    background-color: #fff;
-    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
-    border-radius: 12px;
-    padding: 24px;
+  background-color: #fff;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px,
+    rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  border-radius: 12px;
+  padding: 24px;
 }
-
 
 /* estilizando modal */
 .main-modal {
@@ -46,58 +50,66 @@ body {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+  background-color: rgba(0, 0, 0, 0.6); /* Black w/ opacity */
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 
-
 /* Estilizando input */
 .main-input {
-    margin: 4px 0 8px 0;
-    padding: 12px;
-    border: var(--primary-color) 2px solid;
-    border-radius: 4px;
-    transition: all ease 300ms;
-    outline: none;
+  margin: 4px 0 8px 0;
+  padding: 12px;
+  border: var(--primary-color) 2px solid;
+  border-radius: 4px;
+  transition: all ease 300ms;
+  outline: none;
 }
 
-.main-input:focus, .main-input:hover {
-    border: var(--secunday-color) 2px solid;
-    background-color: #f1f1f1;
-    border-radius: 4px;
+.main-input:focus,
+.main-input:hover {
+  border: var(--secunday-color) 2px solid;
+  background-color: #f1f1f1;
+  border-radius: 4px;
 }
-
 
 /* Estilizando páginas de formulário */
 .form-page {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 100vh;
-    width: 100vw;
-    background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--primary-color);
 }
 
 .form-login {
-    display: flex;
-    flex-direction: column;
-    width: 40vw;
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
 }
 
 @media only screen and (max-width: 1024px) {
-  .form-login { width: calc(80vw - 32px); }
+  .form-login {
+    width: calc(80vw - 32px);
+  }
 }
-
 
 /* tags de responsividade */
-.hidden-mobile { display: flex }
-.show-mobile { display: none }
+.hidden-mobile {
+  display: flex;
+}
+.show-mobile {
+  display: none;
+}
 
 @media only screen and (max-width: 1024px) {
-    .hidden-mobile { display: none }
-    .show-mobile { display: flex }
+  .hidden-mobile {
+    display: none;
+  }
+  .show-mobile {
+    display: flex;
+  }
 }

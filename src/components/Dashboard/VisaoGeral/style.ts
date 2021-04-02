@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const TransactionsContainer = styled.div`
   display: flex;
@@ -9,11 +9,11 @@ export const TransactionsContainer = styled.div`
   width: 100%;
   max-width: 700px;
 
-  @media screen and (max-width: 900px){
+  @media screen and (max-width: 900px) {
     width: 90%;
     height: 100%;
   }
-`
+`;
 
 export const MonthConatiner = styled.div`
   display: flex;
@@ -24,12 +24,12 @@ export const MonthConatiner = styled.div`
   input {
     background: transparent;
     border-radius: 2px;
-    border: 1px solid #68DE5A;
+    border: 1px solid #68de5a;
     color: white;
-    height:24px;
+    height: 24px;
     padding: 2px;
     width: 40px;
     margin-left: 10px;
     font-size: 14px;
   }
-`
+`;

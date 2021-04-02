@@ -1,6 +1,4 @@
-import styled from 'styled-components';
-
-
+import styled from "styled-components";
 
 export const Container = styled.div`
   body {
@@ -14,7 +12,7 @@ export const Container = styled.div`
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #5E60CE;
+    background-color: #5e60ce;
     overflow-x: hidden;
     padding-top: 20px;
   }
@@ -30,10 +28,10 @@ export const Container = styled.div`
   }
 
   .nav {
-      display: grid;
-      flex-wrap: wrap;
-      margin-bottom: 0;
-      list-style: none;
+    display: grid;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+    list-style: none;
   }
 
   .sidenav a:hover {
@@ -49,38 +47,38 @@ export const Container = styled.div`
     font-size: 18px;
   }
 
-  .imgbtn{
+  .imgbtn {
     width: 16px;
     float: left;
     margin-left: 16px;
     margin-top: 14px;
   }
 
-  .sair{
-      width: 100px;
-      height: 30px;
-      font-size: 15px;
-      border-radius: 100px;
-      background-color: white;
-      border-color: white;
-      font-weight: 600;
+  .sair {
+    width: 100px;
+    height: 30px;
+    font-size: 15px;
+    border-radius: 100px;
+    background-color: white;
+    border-color: white;
+    font-weight: 600;
   }
 
-  button{
-    color: #2366B5;
+  button {
+    color: #2366b5;
     margin-left: 12px;
     margin-bottom: 40px;
     margin-top: 35px;
   }
 
-  .btnimg{
+  .btnimg {
     width: 15px;
     float: left;
     margin-left: 12px;
     margin-top: 1px;
   }
 
-  .perfil{
+  .perfil {
     margin-top: 30px;
   }
 
@@ -89,7 +87,9 @@ export const Container = styled.div`
     color: var(--primary-color) !important;
   }
 
-  .mobilenav { display: none }
+  .mobilenav {
+    display: none;
+  }
   @media only screen and (max-width: 1024px) {
     .mobilenav {
       background-color: var(--primary-color);
@@ -100,9 +100,12 @@ export const Container = styled.div`
       align-items: center;
       justify-content: space-between;
     }
-  
-    .mobilenav .logo { flex-direction: row }
-    .mobilenav .logo .name { margin-left: 12px }  
+
+    .mobilenav .logo {
+      flex-direction: row;
+    }
+    .mobilenav .logo .name {
+      margin-left: 12px;
+    }
   }
-  
-`
+`;
