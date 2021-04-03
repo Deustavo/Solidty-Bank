@@ -1,17 +1,17 @@
 .background-card {
-    background-color: var(--primary-color);
-    color: #fff;
-    width: 78.5vw;
-    margin-bottom: 12px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all ease 300ms;
+  background-color: var(--primary-color);
+  color: #fff;
+  width: 78.5vw;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all ease 300ms;
 }
 
 .background-card p {
-    padding: 18px;
+  padding: 18px;
 }
 
 .background-card:hover {
-    background-color: var(--secunday-color);
+  background-color: var(--secunday-color);
 }

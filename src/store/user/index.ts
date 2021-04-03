@@ -2,27 +2,27 @@ import { Reducer } from "redux";
 import INITIAL_STATE from "./initialState";
 import { UserActions, UserData } from "./types";
 
-const reducer: Reducer<UserData | null> = ( state = INITIAL_STATE, action ) => {
-    switch ( action.type ) {
-        case UserActions.SET_USER:
-            const userPayload = action.payload as UserData;
-            
-            return userPayload;
+const reducer: Reducer<UserData | null> = (state = INITIAL_STATE, action) => {
+  switch (action.type) {
+    case UserActions.SET_USER:
+      const userPayload = action.payload as UserData;
 
-        case UserActions.REMOVE_USER:
-            const localToken = localStorage.getItem('@token_user');
+      return userPayload;
 
-            if ( localToken ) {
-                localStorage.removeItem('@token_user');
-                localStorage.removeItem('@user_name');
-                localStorage.removeItem('@user_cpf');
-            }
+    case UserActions.REMOVE_USER:
+      const localToken = localStorage.getItem("@token_user");
 
-            return null;
+      if (localToken) {
+        localStorage.removeItem("@token_user");
+        localStorage.removeItem("@user_name");
+        localStorage.removeItem('@user_cpf');
+      }
 
-        default: 
-            return state;
-    }
-}
+      return null;
+
+    default:
+      return state;
+  }
+};
 
 export default reducer;

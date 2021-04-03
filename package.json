@@ -68,6 +68,11 @@
     "@types/jwt-decode": "^3.1.0",
     "@types/react-router-dom": "^5.1.7",
     "@types/react-toastify": "^4.1.0",
-    "@types/styled-components": "^5.1.9"
+    "@types/styled-components": "^5.1.9",
+    "@typescript-eslint/eslint-plugin": "4.20.0",
+    "@typescript-eslint/parser": "4.20.0",
+    "eslint": "^7.23.0",
+    "eslint-plugin-react": "^7.23.1",
+    "prettier": "2.2.1"
   }
 }

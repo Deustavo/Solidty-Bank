@@ -1,5 +1,5 @@
-import { action } from 'typesafe-actions';
-import { UserActions, UserData } from './types';
+import { action } from "typesafe-actions";
+import { UserActions, UserData } from "./types";
 
 export const set_user = (user: UserData) => action(UserActions.SET_USER, user);
 

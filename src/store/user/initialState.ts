@@ -1,7 +1,7 @@
 import { UserData } from "./types";
-import jwt from 'jsonwebtoken';
+import jwt from "jsonwebtoken";
 
-import { TokenPayload } from '../../types/user';
+import { TokenPayload } from "../../types/user";
 
 const getInitialState = (): UserData | null => {
     const localToken = localStorage.getItem('@token_user');
@@ -16,14 +16,14 @@ const getInitialState = (): UserData | null => {
     const decodedToken = jwt.decode(filteredToken) as TokenPayload;
     
     const storeData: UserData =  {
-        login: decodedToken.sub,
-        token: localToken,
-        name: localUserName,
-        cpf: localCpf,
-    }
+      login: decodedToken.sub,
+      token: localToken,
+      name: localUserName,
+      cpf: localCpf,
+  }
 
-    return storeData;
-}
+  return storeData;
+};
 
 const INITIAL_STATE: UserData | null = getInitialState();
 

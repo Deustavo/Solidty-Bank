@@ -1,11 +1,11 @@
-import React from 'react';
-import { Table } from 'reactstrap';
-import { Container } from './style';
-import { useDispatch, useSelector } from 'react-redux';
-import { ApplicationStore } from '../../../store';
+import React from "react";
+import { Table } from "reactstrap";
+import { Container } from "./style";
+import { useDispatch, useSelector } from "react-redux";
+import { ApplicationStore } from "../../../store";
 
 const Plans: React.FC = () => {
-  const user = useSelector( (state: ApplicationStore) => state.user );
+  const user = useSelector((state: ApplicationStore) => state.user);
 
   return (
     <div>
@@ -22,22 +22,22 @@ const Plans: React.FC = () => {
         <tbody>
           <tr>
             <td>Despesas</td>
-            <td>{user?.name.split(' ')[0]}</td>
+            <td>{user?.name.split(" ")[0]}</td>
             <td>Movimentação tipo: R</td>
           </tr>
           <tr>
             <td>Receitas</td>
-            <td>{user?.name.split(' ')[0]}</td>
+            <td>{user?.name.split(" ")[0]}</td>
             <td>Movimentação tipo: R</td>
           </tr>
           <tr>
             <td>Lista com demais</td>
-            <td>{user?.name.split(' ')[0]}</td>
+            <td>{user?.name.split(" ")[0]}</td>
             <td>Movimentação tipo: R</td>
           </tr>
           <tr>
             <td>Movimentações</td>
-            <td>{user?.name.split(' ')[0]}</td>
+            <td>{user?.name.split(" ")[0]}</td>
             <td>Movimentação tipo: R</td>
           </tr>
     
@@ -46,6 +46,6 @@ const Plans: React.FC = () => {
     </Container>
     </div>
   );
-}
+};
 
 export default Plans;
