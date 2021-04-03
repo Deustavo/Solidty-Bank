@@ -4,20 +4,25 @@
 
 ## Sobre o desafio 💪
 O Solidty Bank é um banco digital criado para o desafio da [Accenture](https://www.accenture.com/br-pt) orientado pela [Gama Academy](https://www.gama.academy/).
-<br />
+<br /><br /><br />
 
 ## Confira o resultado final 👇
 [Solidty Bank](https://solidtybank.vercel.app)
-<br />
+<br /><br /><br />
+
+## Como nos organizamos 🤟
+[Nosso Figma](https://www.figma.com/file/tnPgxpCgciBrc2JHPiiSKm/Design?node-id=262%3A1670)
+[Divisão de tarefas no Notion](https://www.notion.so/b4cd5ae2c815420893c0253373091d65?v=bd8e0b7614454eb68549fd2b63e40ea8)
+<br /><br /><br />
 
 ## Equipe Solidty Bank 👊
-[Gustavo Andrade](https://github.com/Deustavo)
-[Lucas Santos](https://github.com/Lucas155)
-[Marcos de Souza](https://github.com/marcoslavecchia)
-[Margot Garcia](https://github.com/margotpaon)
-[Mateus Breno](https://github.com/mateusbreno)
-<br />
+- [Gustavo Andrade](https://github.com/Deustavo)<br />
+- [Lucas Santos](https://github.com/Lucas155)<br />
+- [Marcos de Souza](https://github.com/marcoslavecchia)<br />
+- [Margot Garcia](https://github.com/margotpaon)<br />
+- [Mateus Breno](https://github.com/mateusbreno)
+<br /><br /><br />
 
-## Agradecimento especial
+## Agradecimento especial ✌
 Nosso professor orientador, muito obrigado pelos ensinamentos!
 [Doug](https://github.com/mrdouglasmorais) 
