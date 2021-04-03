@@ -8,7 +8,6 @@ import './styles.css';
 
 const Profile: React.FC = () => {
   const user = useSelector( (state: ApplicationStore) => state.user );
-  console.log(user);
 
   return(
     <div className="container-profile">

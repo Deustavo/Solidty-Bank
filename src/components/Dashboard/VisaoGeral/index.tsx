@@ -94,7 +94,6 @@ const Transactions: React.FC = () => {
     return (
       <div>
         {/* Componente para página principal */}
-        {console.log(`Olá ${user?.name.split(" ")[0]}, seja bem-vindo(a)!`)}
         <Balance
           contaBanco={contas?.contaBanco}
           contaCredito={contas?.contaCredito}

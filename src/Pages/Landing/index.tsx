@@ -90,7 +90,7 @@ const Landing: React.FC = () => {
         }
 
         const { status } = await api.post("/usuarios", {
-          cpf: cpf,
+          cpf: cpfMask,
           login: username,
           nome: name,
           senha: password,
