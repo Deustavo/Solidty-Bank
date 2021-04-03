@@ -12,8 +12,8 @@ export const Container = styled.div`
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #5e60ce;
-    overflow-x: hidden;
+    background-color: #5E60CE;
+    //overflow-x: hidden;
     padding-top: 20px;
   }
 

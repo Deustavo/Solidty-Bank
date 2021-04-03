@@ -1,21 +1,20 @@
-import React, { ChangeEvent, useCallback, useRef, useState } from "react";
-import { FaArrowRight } from "react-icons/fa";
-import api from "../../../services/api";
-import { useDispatch, useSelector } from "react-redux";
-import { ApplicationStore } from "../../../store";
-import { Contas, Plano } from "../../../types/dash-board";
-import { toast } from "react-toastify";
-import { Form } from "@unform/web";
-import { FormHandles } from "@unform/core";
-import * as yup from "yup";
+import React, { ChangeEvent, useCallback, useRef, useState } from 'react';
+import { FaArrowRight } from 'react-icons/fa';
+import api from '../../../services/api';
+import { useDispatch, useSelector } from 'react-redux';
+import { ApplicationStore } from '../../../store';
+import { Contas, Plano } from '../../../types/dash-board';
+import { toast } from 'react-toastify';
+import { Form } from '@unform/web';
+import { FormHandles } from '@unform/core';
+import * as yup from 'yup';
 
-import Input from "../../Input";
-import {
-  change_screen,
-  set_transaction_data,
-} from "../../../store/dashboard/actions";
-import getValidationErrors from "../../../utils/getValidationErrors";
-import Loader from "../../Loader";
+import Input from '../../Input'
+import { change_screen, set_transaction_data } from '../../../store/dashboard/actions';
+import getValidationErrors from '../../../utils/getValidationErrors';
+import Loader from '../../Loader';
+import { Container } from './style';
+
 
 const Deposit: React.FC = () => {
   const dispatch = useDispatch();
@@ -150,51 +149,27 @@ const Deposit: React.FC = () => {
 
   return (
     <div>
-      <div className="header-form">
-        <p>
-          {invoicePayment
-            ? "Realize o pagamento da sua fatura"
-            : "Realize o seu depósito"}
-        </p>
-        <button onClick={() => setInvoicePayment(!invoicePayment)}>
-          <span>
-            {invoicePayment
-              ? "Realizar depósito"
-              : "Realizar pagamento de fatura"}
-          </span>
-        </button>
-      </div>
+      <Container>
+      <h1>Adicionar Fundos</h1>
       <Form ref={formRef} onSubmit={handleSubmit}>
-        <Input
-          name="date"
-          value={data}
-          onChange={(e) => setData(e.target.value)}
-          type="date"
-        />
-        <Input
-          name="description"
-          value={descricao}
-          onChange={(e) => setDescricao(e.target.value)}
-          type="text"
-          placeholder="Descrição"
-        />
-        <Input
-          name="transferValue"
-          value={valor ? valor : ""}
-          onChange={handleChangeValue}
-          type="number"
-          placeholder="Qual o valor de sua transferência?"
-        />
+        <label>Data</label>
+        <Input name="date" value={data} onChange={e => setData(e.target.value)} type="date" />
+        <label>Descrição</label>
+        <Input name="description" value={descricao} onChange={e => setDescricao(e.target.value)} type="text" placeholder="Descrição" />
+        <label>Qual o valor de sua transferência?</label>
+        <Input name="transferValue" value={valor ? valor : ''} onChange={handleChangeValue} type="number" placeholder="Qual o valor de sua transferência?" />
 
         {loading ? (
           <Loader style={{ marginTop: 48 }} />
         ) : (
-          <button type="submit">
-            <span>{invoicePayment ? "Pagar agora" : "Depositar agora"}</span>
-            <FaArrowRight color="#8c52e5" />
-          </button>
-        )}
+            <button type='submit'>
+              <span>
+                {invoicePayment ? 'Pagar agora' : 'Adicionar fundo'}
+              </span>
+            </button>
+          )}
       </Form>
+      </Container>
     </div>
   );
 };

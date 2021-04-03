@@ -1,22 +1,21 @@
-import React, { ChangeEvent, useCallback, useRef, useState } from "react";
-import { Form } from "@unform/web";
-import { FaArrowRight } from "react-icons/fa";
-import { useDispatch, useSelector } from "react-redux";
-import { toast } from "react-toastify";
-import * as yup from "yup";
+import React, {ChangeEvent, useCallback, useRef, useState } from 'react';
+import { Form } from '@unform/web';
+import { FaArrowRight } from 'react-icons/fa'
+import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
+import * as yup from 'yup';
 
-import { ApplicationStore } from "../../../store";
-import api from "../../../services/api";
-import { Contas, Plano } from "../../../types/dash-board";
-import Input from "../../Input";
+import { ApplicationStore } from '../../../store';
+import api from '../../../services/api';
+import { Contas, Plano } from '../../../types/dash-board';
+import Input from '../../Input';
 
-import {
-  change_screen,
-  set_transaction_data,
-} from "../../../store/dashboard/actions";
-import { FormHandles } from "@unform/core";
-import getValidationErrors from "../../../utils/getValidationErrors";
-import Loader from "../../Loader";
+import { change_screen, set_transaction_data } from '../../../store/dashboard/actions';
+import { FormHandles } from '@unform/core';
+import getValidationErrors from '../../../utils/getValidationErrors';
+import Loader from '../../Loader';
+import { Container } from './style';
+
 
 interface TranferenciaProps {
   func: Function;
@@ -159,46 +158,29 @@ const Tranferencia: React.FC<TranferenciaProps> = (props) => {
   return (
     <>
       <div>
+        <Container>
         <Form ref={formRef} onSubmit={handleSubmit}>
-          <p>Informe os dados para realizar sua transferência</p>
+          <h1>Transferência</h1>
 
-          <Input
-            name="receiver"
-            value={destinatario}
-            onChange={(e) => setDestinatario(e.target.value)}
-            type="text"
-            placeholder="Login do destinatário"
-          />
-          <Input
-            name="date"
-            value={data}
-            onChange={(e) => setData(e.target.value)}
-            type="date"
-          />
-          <Input
-            name="description"
-            value={descricao}
-            onChange={(e) => setDescricao(e.target.value)}
-            type="text"
-            placeholder="Descrição"
-          />
-          <Input
-            name="transferValue"
-            value={valor ? valor : ""}
-            onChange={handleChangeValue}
-            type="number"
-            placeholder="Qual o valor de sua transferência?"
-          />
+          <label>Login do destinatário</label>
+          <Input name="receiver" value={destinatario} onChange={e => setDestinatario(e.target.value)} type="text" placeholder="Login do destinatário" />
+          <label>Data</label>
+          <Input name="date" value={data} onChange={e => setData(e.target.value)} type="date" />
+          <label>Descrição</label>
+          <Input name="description" value={descricao} onChange={e => setDescricao(e.target.value)} type="text" placeholder="Descrição" />
+          <label>Qual o valor de sua transferência?</label>
+          <Input name="transferValue" value={valor ? valor : ''} onChange={handleChangeValue} type="number" placeholder="Qual o valor de sua transferência?" />
 
           {loading ? (
             <Loader style={{ marginTop: 59 }} />
           ) : (
-            <button type="submit">
-              <span>Transferir agora</span>
-              <FaArrowRight color="#8c52e5" />
-            </button>
-          )}
+              <button type="submit">
+                <span>Transferir agora</span>
+              </button>
+            )}
         </Form>
+        </Container>
+
       </div>
     </>
   );
