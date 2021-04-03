@@ -20,13 +20,13 @@ import "./index.css";
 import "../../components/Dashboard/CardMenuMobile";
 
 // paginas
-import VisaoGeral from "../../components/Dashboard/VisaoGeral";
-import ContaCorrente from "../../components/Dashboard/ContaCorrente";
-import AdicionarFundos from "../../components/Dashboard/AdicionarFundos";
-import CartaoCredito from "../../components/Dashboard/CartaoCredito";
-import PagarFatura from "../../components/Dashboard/PagarFatura";
-import Tranferencia from "../../components/Dashboard/Tranferencia";
-import Plans from "../../components/Dashboard/Plans";
+import VisaoGeral from '../../components/Dashboard/VisaoGeral';
+import ContaCorrente from '../../components/Dashboard/ContaCorrente';
+import AdicionarFundos from '../../components/Dashboard/AdicionarFundos';
+import CartaoCredito from '../../components/Dashboard/CartaoCredito';
+import PagarFatura from '../../components/Dashboard/PagarFatura';
+import Tranferencia from '../../components/Dashboard/Tranferencia';
+import Profile from '../../components/Dashboard/Profile';
 
 //import React from 'react';
 import { Nav, NavItem, NavLink } from "reactstrap";
@@ -106,11 +106,6 @@ const Dashboard: React.FC = () => {
           <CardMenuMobile
             title="Tranferencia"
             name="Transferência"
-            func={changeComponent}
-          />
-          <CardMenuMobile
-            title="Plans"
-            name="Movimentações"
             func={changeComponent}
           />
           <div
@@ -271,33 +266,17 @@ const Dashboard: React.FC = () => {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <MdImportExport
-                  size={16}
-                  className="imgbtn"
-                  color={
-                    currentScreen === "Plans" ? "var(--primary-color)" : "#fff"
-                  }
-                />
-                <NavLink
-                  className={currentScreen === "Plans" ? "selected" : ""}
-                  onClick={() => changeComponent("Plans")}
-                  selected={currentScreen === "Plans"}
-                >
-                  Movimentações
-                </NavLink>
-              </NavItem>
-              <NavItem>
                 <div className="perfil">
                   <MdPerson
                     size={16}
                     className="imgbtn"
                     color={
-                      currentScreen === "Plans"
+                      currentScreen === "Profile"
                         ? "var(--primary-color)"
                         : "#fff"
                     }
                   />
-                  <NavLink href="#">Perfil</NavLink>
+                  <NavLink className={currentScreen === 'Profile' ? 'selected' : ''} onClick={() => changeComponent('Profile')} selected={currentScreen === 'Profile'}>Perfil</NavLink>
                 </div>
               </NavItem>
               <NavItem>
@@ -338,8 +317,8 @@ const Dashboard: React.FC = () => {
             <Tranferencia func={changeComponent}></Tranferencia>
           )}
 
-          {/* Plans*/}
-          {currentScreen === "Plans" && <Plans />}
+          {/* Perfil*/}
+          {currentScreen === 'Profile' && <Profile />}
         </main>
       </div>
     </>

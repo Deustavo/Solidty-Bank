@@ -6,7 +6,8 @@ export enum UserActions {
 }
 
 export interface UserData {
-  token: string;
-  login: string;
-  name: string;
+    token: string;
+    login: string;
+    name: string;
+    cpf: string;
 }

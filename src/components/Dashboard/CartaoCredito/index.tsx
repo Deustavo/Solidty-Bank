@@ -123,7 +123,6 @@ const Transactions: React.FC = () => {
         </div>
 
         <Extract
-          contaBanco={contas?.contaBanco}
           contaCredito={contas?.contaCredito}
         />
         {/* <FiArrowLeft onClick={() => {props.func('')}}/> */}

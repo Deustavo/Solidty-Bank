@@ -119,8 +119,7 @@ const Transactions: React.FC = () => {
           </p>
         </div>
 
-        <Extract contaCredito={contas?.contaCredito} />
-        {/* <FiArrowLeft onClick={() => {props.func('')}}/> */}
+        <Extract contaBanco={contas?.contaBanco} />
       </div>
     );
   else return <Loader style={{ border: "4px solid #f0f0f0" }} />;

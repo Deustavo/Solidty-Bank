@@ -29,12 +29,27 @@ const Extract: React.FC<ExtractData> = (props) => {
           return Number(new Date(a.data)) - Number(new Date(b.data));
         })
         .reverse();
+            return orderedLauchs;
+        } else if (props.contaBanco?.lancamentos) {
+            const initLaunchs = [...props.contaBanco.lancamentos];
 
-      return orderedLauchs;
-    } else {
-      return [];
-    }
-  }, [props.contaBanco?.lancamentos, props.contaCredito?.lancamentos]);
+            const orderedLauchs = initLaunchs.slice().sort((a, b) => {
+                return Number(new Date(a.data)) - Number(new Date(b.data));
+            }).reverse();
+
+            return orderedLauchs;
+        } else if (props.contaCredito?.lancamentos) {
+            const initLaunchs = [...props.contaCredito.lancamentos];
+
+            const orderedLauchs = initLaunchs.slice().sort((a, b) => {
+                return Number(new Date(a.data)) - Number(new Date(b.data));
+            }).reverse();
+
+            return orderedLauchs;
+        }else {
+            return [];
+        }
+    }, [props.contaBanco?.lancamentos, props.contaCredito?.lancamentos]);
 
   function typePlans(typePlan: string) {
     if (typePlan === "R") {
@@ -77,16 +92,16 @@ const Extract: React.FC<ExtractData> = (props) => {
               <thead>
                 <tr>
                   <th scope="col">Tipo</th>
-                  <th scope="col">Data</th>
                   <th scope="col">Descrição</th>
                   <th scope="col">Valor</th>
+                  <th scope="col">Data</th>
                 </tr>
               </thead>
               <tbody>
                 {allLaunchs &&
                   allLaunchs.map((launch, index) => (
                     <tr key={index}>
-                      <th>{typePlans(launch.planoConta.tipoMovimento)}</th>
+                      <td>{typePlans(launch.planoConta.tipoMovimento)}</td>
                       <td>{launch.descricao}</td>
                       <td>
                         {launch.valor.toLocaleString("pt-br", {
@@ -97,12 +112,6 @@ const Extract: React.FC<ExtractData> = (props) => {
                       <td>{launch.data}</td>
                     </tr>
                   ))}
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
               </tbody>
             </table>
           )}

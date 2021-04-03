@@ -51,6 +51,7 @@ const Login: React.FC = () => {
         });
         localStorage.setItem("@token_user", response.token);
         localStorage.setItem("@user_name", response.usuario.nome);
+        localStorage.setItem('@user_cpf', response.usuario.cpf);
         updateReduxState();
         toast.success("Seja bem-vindo(a)");
         history.push("/dashboard");

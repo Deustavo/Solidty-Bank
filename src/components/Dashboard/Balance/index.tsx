@@ -106,7 +106,7 @@ const Balance: React.FC<AccountProps> = (props) => {
                 style: "currency",
                 currency: "BRL",
               })}
-              style={{ color: "var(--primary-color)", fontSize: 48 }}
+              style={{ color: "var(--primary-color)", fontSize: 40 }}
             >
               {contaBanco?.saldo.toLocaleString("pt-br", {
                 style: "currency",

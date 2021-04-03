@@ -13,7 +13,8 @@ export type Screen =
   | "CartaoCredito"
   | "PagarFatura"
   | "Tranferencia"
-  | "Plans";
+  | "Plans"
+  | 'Profile';
 
 export interface Transactions {
   accounts: Contas;

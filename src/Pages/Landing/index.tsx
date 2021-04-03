@@ -199,25 +199,29 @@ const Landing: React.FC = () => {
           cartão Solid
         </h1>
         <Form className="form-cadastro" ref={formRef} onSubmit={handleSubmit}>
+          <p className="title-input">Seu CPF:</p>
           <Input
             name="cpf"
             maxLength={14}
             value={cpfMask}
             onChange={handleSetCpfMask}
-            placeholder="Digite seu CPF"
+            placeholder="xxx.xxx.xxx-xx"
           />
+          <p className="title-input">Crie um nome de usuário:</p>
           <Input
             name="username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            placeholder="Nome de usuário"
+            placeholder="NomeDeUsuário"
           />
+          <p className="title-input">Seu nome completo:</p>
           <Input
             name="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="Nome completo"
+            placeholder="Digite seu nome completo"
           />
+          <p className="title-input">Crie uma senha:</p>
           <Input
             name="password"
             value={password}
@@ -225,6 +229,7 @@ const Landing: React.FC = () => {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Digite sua senha"
           />
+          <p className="title-input">Digite sua senha novamente:</p>
           <Input
             name="confirmPassword"
             value={confirmPassword}
