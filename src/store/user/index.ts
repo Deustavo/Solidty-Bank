@@ -15,6 +15,7 @@ const reducer: Reducer<UserData | null> = ( state = INITIAL_STATE, action ) => {
             if ( localToken ) {
                 localStorage.removeItem('@token_user');
                 localStorage.removeItem('@user_name');
+                localStorage.removeItem('@user_cpf');
             }
 
             return null;

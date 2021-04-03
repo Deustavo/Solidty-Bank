@@ -21,6 +21,7 @@ import CartaoCredito from '../../components/Dashboard/CartaoCredito';
 import PagarFatura from '../../components/Dashboard/PagarFatura';
 import Tranferencia from '../../components/Dashboard/Tranferencia';
 import Plans from '../../components/Dashboard/Plans';
+import Profile from '../../components/Dashboard/Profile';
 
 //import React from 'react';
 import { Nav, NavItem, NavLink } from 'reactstrap';
@@ -139,8 +140,8 @@ const Dashboard: React.FC = () => {
               </NavItem>
               <NavItem>
                 <div className="perfil">
-                  <MdPerson size={16} className="imgbtn" color={currentScreen === 'Plans' ? 'var(--primary-color)' : '#fff'}/>
-                  <NavLink  href="#">Perfil</NavLink>
+                  <MdPerson size={16} className="imgbtn" color={currentScreen === 'Profile' ? 'var(--primary-color)' : '#fff'}/>
+                  <NavLink className={currentScreen === 'Profile' ? 'selected' : ''} onClick={() => changeComponent('Profile')} selected={currentScreen === 'Profile'}>Perfil</NavLink>
                 </div>
               </NavItem>
               <NavItem>
@@ -175,6 +176,9 @@ const Dashboard: React.FC = () => {
 
           {/* Plans*/}
           {currentScreen === 'Plans' && <Plans />}
+
+          {/* Perfil*/}
+          {currentScreen === 'Profile' && <Profile />}
         </main>
       </div>
     </>

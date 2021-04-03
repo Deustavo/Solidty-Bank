@@ -80,6 +80,11 @@
     color: #fff;
 }
 
+#cadastro .title-input {
+    font-weight: bold;
+    color: #fff;
+}
+
 .form-cadastro {
     display: flex;
     flex-direction: column;

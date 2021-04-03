@@ -1,0 +1,15 @@
+.info-profile {
+    display: flex;
+    margin-bottom: 24px;
+}
+
+.icon-profile {
+    margin-right: 12px;
+    width: 40px;
+    height: 40px;
+}
+
+.title {
+    font-size: 14px;
+    font-weight: bold;
+}

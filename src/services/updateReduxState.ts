@@ -7,8 +7,9 @@ import { TokenPayload } from '../types/user';
 const updateReduxState = () => {
     const localToken = localStorage.getItem('@token_user');
     const localName = localStorage.getItem('@user_name');
+    const localCpf = localStorage.getItem('@user_cpf');
 
-    if ( !localName || !localToken ) {
+    if ( !localName || !localToken || !localCpf ) {
         store.dispatch( remove_user() );
         return;
     }
@@ -19,7 +20,8 @@ const updateReduxState = () => {
     store.dispatch( set_user({
         login: tokenPayload.sub,
         name: localName,
-        token: localToken
+        token: localToken,
+        cpf: localCpf,
     }));
 }
 

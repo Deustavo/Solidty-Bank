@@ -90,7 +90,7 @@ const Transactions: React.FC = () => {
         <p>Filtrar por mês: <input  type="number" min={1} max={12} value={referenceDate} onChange={updateReference}/></p>
       </div>
 
-      <Extract contaCredito={contas?.contaCredito}/>
+      <Extract contaBanco={contas?.contaBanco} />
       {/* <FiArrowLeft onClick={() => {props.func('')}}/> */}
 
     </div>
