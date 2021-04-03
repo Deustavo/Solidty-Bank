@@ -15,8 +15,7 @@ O Solidty Bank é um banco digital criado para o desafio da [Accenture](https://
 - Figma<br />
 - Metodologia ágil (scrum)<br />
 - Notion<br />
-
-<br /><br /><br />
+<br /><br />
 
 ## Confira o resultado final 👇
 [Solidty Bank](https://solidtybank.vercel.app)
