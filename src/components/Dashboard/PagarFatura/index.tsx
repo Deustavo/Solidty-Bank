@@ -13,6 +13,8 @@ import Input from '../../Input'
 import { change_screen, set_transaction_data } from '../../../store/dashboard/actions';
 import getValidationErrors from '../../../utils/getValidationErrors';
 import Loader from '../../Loader';
+import { Container } from './style';
+
 
 const PagarFatura: React.FC = () => {
 
@@ -22,7 +24,7 @@ const PagarFatura: React.FC = () => {
   const [data, setData] = useState('');
   const [descricao, setDescricao] = useState('');
   const [valor, setValor] = useState(0);
-  const [invoicePayment, setInvoicePayment] = useState(false);
+  const [invoicePayment, setInvoicePayment] = useState(true);
   const store = useSelector((state: ApplicationStore) => state.user);
   const formRef = useRef<FormHandles>(null);
 
@@ -114,7 +116,9 @@ const PagarFatura: React.FC = () => {
 
   return (
     <div>
-      <div className="header-form">
+      <Container>
+       
+     {/*<div className="header-form">
         <p>
           {invoicePayment ? 'Realize o pagamento da sua fatura' : 'Realize o seu depósito'}
         </p>
@@ -123,23 +127,29 @@ const PagarFatura: React.FC = () => {
             {invoicePayment ? 'Realizar depósito' : 'Realizar pagamento de fatura'}
           </span>
         </button>
-      </div>
+      </div> */}
+      
+      <h1>Pagar fatura</h1>
+      
       <Form ref={formRef} onSubmit={handleSubmit}>
+        <label>Data</label>
         <Input name="date" value={data} onChange={e => setData(e.target.value)} type="date" />
+        <label>Descrição</label>
         <Input name="description" value={descricao} onChange={e => setDescricao(e.target.value)} type="text" placeholder="Descrição" />
-        <Input name="transferValue" value={valor ? valor : ''} onChange={handleChangeValue} type="number" placeholder="Qual o valor de sua transferência?" />
+        <label>Qual o valor da fatura?</label>
+        <Input name="transferValue" value={valor ? valor : ''} onChange={handleChangeValue} type="number" placeholder="Qual o valor da fatura?" />
 
         {loading ? (
           <Loader style={{ marginTop: 48 }} />
         ) : (
             <button type='submit'>
               <span>
-                {invoicePayment ? 'Pagar agora' : 'Depositar agora'}
+                {invoicePayment ? 'Pagar agora' : 'Pagar agora'}
               </span>
-              <FaArrowRight color="#8c52e5" />
             </button>
           )}
       </Form>
+      </Container>
     </div>
   )
 }

@@ -1,11 +1,20 @@
-import React from 'react';
+//import React from 'react';
+import React, { useState, useEffect, ChangeEvent, useCallback } from 'react';
 import { Table } from 'reactstrap';
 import { Container } from './style';
 import { useDispatch, useSelector } from 'react-redux';
 import { ApplicationStore } from '../../../store';
+import Extract from '../Extract';
+import { Contas } from '../../../types/dash-board';
+
 
 const Plans: React.FC = () => {
+  const [ contas, setContas ] = useState<Contas>();
   const user = useSelector( (state: ApplicationStore) => state.user );
+
+  console.log(contas?.contaCredito);
+  console.log(contas?.contaBanco);
+
 
   return (
     <div>
@@ -40,7 +49,6 @@ const Plans: React.FC = () => {
           <td>{user?.name.split(' ')[0]}</td>
           <td>Movimentação tipo: R</td>
         </tr>
-   
       </tbody>
     </Table>
     </Container>

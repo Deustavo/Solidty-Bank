@@ -13,6 +13,8 @@ import Input from '../../Input'
 import { change_screen, set_transaction_data } from '../../../store/dashboard/actions';
 import getValidationErrors from '../../../utils/getValidationErrors';
 import Loader from '../../Loader';
+import { Container } from './style';
+
 
 const Deposit: React.FC = () => {
 
@@ -114,7 +116,8 @@ const Deposit: React.FC = () => {
 
   return (
     <div>
-      <div className="header-form">
+      <Container>
+      {/*<div className="header-form">
         <p>
           {invoicePayment ? 'Realize o pagamento da sua fatura' : 'Realize o seu depósito'}
         </p>
@@ -124,9 +127,14 @@ const Deposit: React.FC = () => {
           </span>
         </button>
       </div>
+  */}
+      <h1>Adicionar Fundos</h1>
       <Form ref={formRef} onSubmit={handleSubmit}>
+        <label>Data</label>
         <Input name="date" value={data} onChange={e => setData(e.target.value)} type="date" />
+        <label>Descrição</label>
         <Input name="description" value={descricao} onChange={e => setDescricao(e.target.value)} type="text" placeholder="Descrição" />
+        <label>Qual o valor de sua transferência?</label>
         <Input name="transferValue" value={valor ? valor : ''} onChange={handleChangeValue} type="number" placeholder="Qual o valor de sua transferência?" />
 
         {loading ? (
@@ -134,12 +142,12 @@ const Deposit: React.FC = () => {
         ) : (
             <button type='submit'>
               <span>
-                {invoicePayment ? 'Pagar agora' : 'Depositar agora'}
+                {invoicePayment ? 'Pagar agora' : 'Adicionar fundo'}
               </span>
-              <FaArrowRight color="#8c52e5" />
             </button>
           )}
       </Form>
+      </Container>
     </div>
   )
 }

@@ -14,6 +14,8 @@ import { change_screen, set_transaction_data } from '../../../store/dashboard/ac
 import { FormHandles } from '@unform/core';
 import getValidationErrors from '../../../utils/getValidationErrors';
 import Loader from '../../Loader';
+import { Container } from './style';
+
 
 interface TranferenciaProps {
   func: Function;
@@ -141,14 +143,17 @@ const Tranferencia: React.FC<TranferenciaProps> = (props) => {
   return (
     <>
       <div>
+        <Container>
         <Form ref={formRef} onSubmit={handleSubmit}>
-          <p>
-            Informe os dados para realizar sua transferência
-            </p>
+          <h1>Transferência</h1>
 
+          <label>Login do destinatário</label>
           <Input name="receiver" value={destinatario} onChange={e => setDestinatario(e.target.value)} type="text" placeholder="Login do destinatário" />
+          <label>Data</label>
           <Input name="date" value={data} onChange={e => setData(e.target.value)} type="date" />
+          <label>Descrição</label>
           <Input name="description" value={descricao} onChange={e => setDescricao(e.target.value)} type="text" placeholder="Descrição" />
+          <label>Qual o valor de sua transferência?</label>
           <Input name="transferValue" value={valor ? valor : ''} onChange={handleChangeValue} type="number" placeholder="Qual o valor de sua transferência?" />
 
           {loading ? (
@@ -156,11 +161,10 @@ const Tranferencia: React.FC<TranferenciaProps> = (props) => {
           ) : (
               <button type="submit">
                 <span>Transferir agora</span>
-                <FaArrowRight color="#8c52e5" />
               </button>
             )}
         </Form>
-
+        </Container>
 
       </div>
     </>
