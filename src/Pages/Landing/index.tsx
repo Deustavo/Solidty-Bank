@@ -104,10 +104,11 @@ const Landing: React.FC = () => {
 
           localStorage.setItem("@token_user", data.token);
           localStorage.setItem("@user_name", data.usuario.nome);
+          localStorage.setItem("@user_cpf", data.usuario.cpf);
           updateReduxState();
 
           toast.success("Usuário registrado!");
-          history.push("/dashboard");
+          history.push("/login");
         } else {
           toast.error("Ocorreu algum erro!");
           history.push("/error");
