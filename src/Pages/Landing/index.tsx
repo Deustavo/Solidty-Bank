@@ -168,10 +168,11 @@ const Landing: React.FC = () => {
             <br />
             <b>e segurança</b>
           </p>
+           
           <p className="legend">
-            Duis aute irure dolor in
-            <br /> reprehenderit in voluptate
-            <br /> velit esse cillum nulla pariatur.
+            Reinventando a relação 
+            <br /> das pessoas com 
+            <br /> o dinheiro.
           </p>
         </div>
       </section>
@@ -186,9 +187,9 @@ const Landing: React.FC = () => {
             <b>e solidez</b>
           </p>
           <p className="text">
-            Pensar em algum texto genérico porém <br /> chamativo que motive as
-            pessoas
-            <br /> a assinarem os cartões da solid
+            Diferente, sem pegadinhas e sem tarifas <br /> como você sempre quis
+            
+            <br /> solid bank.
           </p>
         </div>
       </section>
